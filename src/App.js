@@ -1,12 +1,13 @@
 import './App.css';
+import Background from './components/background/backgroundComp';
 import HeaderComp from './components/header/headerComp';
-import FirstComp from './components/forms/firstformComp/firstComp';
 
 function App() {
     return (
         <>
+            <Background />
             <HeaderComp />
-            <FirstComp />
+            
         </>
     );
 }
