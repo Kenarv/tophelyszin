@@ -5,7 +5,7 @@ const HeaderComp = () => {
         <div className="h-44 mx-auto bg-slate-400 mb-10">
             <div>
                 <img
-                    className="h-44 select-none App-logo"
+                    className="h-44 select-none animate-App-logo"
                     src={logo}
                     alt="logo"
                 />

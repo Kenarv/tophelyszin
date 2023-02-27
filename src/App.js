@@ -1,4 +1,3 @@
-import './App.css';
 import HeaderComp from './components/header/headerComp';
 import FirstComp from './components/forms/firstformComp/firstComp';
 
