@@ -5,8 +5,8 @@ import FirstComp from './components/forms/firstformComp/firstComp';
 function App() {
     return (
         <div className="h-screen overflow-hidden">
-            <HeaderComp />
             <MainComp>
+            <HeaderComp />
                 <FirstComp />
             </MainComp>
         </div>
