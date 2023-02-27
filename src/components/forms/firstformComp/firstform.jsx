@@ -1,44 +1,35 @@
-import { useState } from 'react';
 
-const FirstForm = props => {
-    const [name, setName] = useState('Béla');
-
-    const { buttonStyle } = props.firstformObj;
-
+const FirstForm = () => {
     return (
-        <div className="animate-form-animation flex flex-col gap-2 w-[30rem] mx-auto form-animation p-20 bg-slate-300/70 rounded-xl">
+        <div className="animate-form-animation flex flex-col gap-2 w-[30rem] mx-auto form-animation p-20 bg-sky-300/30 rounded-xl">
             <div className="flex flex-col">
                 <label className="font-bold" htmlFor="name">
-                    Name
+                    felhasználónév:
                 </label>
                 <input
                     className="border border-1"
                     type="text"
                     name="name"
-                    placeholder={name}
+                    placeholder=""
                 />
             </div>
             <div className="flex flex-col">
                 <label className="font-bold" htmlFor="password">
-                    Password
+                    Jelszó:
                 </label>
                 <input
                     className="border border-1"
                     type="password"
                     name="password"
-                    placeholder="Jelszó:"
+                    placeholder=""
                 />
             </div>
             <div className="flex flex-row gap-20">
                 <button
-                    className={`${
-                        name.toLowerCase() === 'béla'
-                            ? 'bg-blue-500 hover:bg-blue-600'
-                            : 'bg-red-500 hover:bg-red-600'
-                    } ${buttonStyle}`}
-                    onClick={() => setName('Feri')}
+                    className="transition duration-300 ease-in-out text-xl w-35 px-5 py-1 text-white rounded-3xl bg-sky-400/30 hover:bg-sky-300/50"
+                    onClick={() => ''}
                 >
-                    NChange
+                    <p className='text-slate-700 font-semibold text-base'>Belépés</p> 
                 </button>
             </div>
         </div>
