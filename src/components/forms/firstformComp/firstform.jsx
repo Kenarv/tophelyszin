@@ -6,7 +6,7 @@ const FirstForm = props => {
     const { buttonStyle } = props.firstformObj;
 
     return (
-        <div className="form-animation flex flex-col gap-2 w-[30rem] mx-auto form-animation p-20 bg-slate-300/70 rounded-xl">
+        <div className="animate-form-animation flex flex-col gap-2 w-[30rem] mx-auto form-animation p-20 bg-slate-300/70 rounded-xl">
             <div className="flex flex-col">
                 <label className="font-bold" htmlFor="name">
                     Name

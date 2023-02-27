@@ -12,7 +12,7 @@ module.exports = {
                 },
             },
             animation: {
-                'form-animation': 'form-opacity 1s ease-in-out',
+                'form-animation': 'form-opacity 0.5s ease-in-out',
             },
         },
     },
