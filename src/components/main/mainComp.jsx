@@ -1,0 +1,15 @@
+const MainComp = ({ children }) => {
+    return (
+        <div
+            className={`h-screen w-full bg-wedding bg-cover bg-no-repeat bg-center`}
+        >
+            <div className="relative w-full h-full">
+                <div className="w-full h-full backdrop-filter backdrop-blur-sm">
+                    {children}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default MainComp;

@@ -1,14 +1,15 @@
-import './App.css';
-import Background from './components/background/backgroundComp';
 import HeaderComp from './components/header/headerComp';
+import MainComp from './components/main/mainComp';
+import FirstComp from './components/forms/firstformComp/firstComp';
 
 function App() {
     return (
-        <>
-            <Background />
+        <div className="h-screen overflow-hidden">
             <HeaderComp />
-            
-        </>
+            <MainComp>
+                <FirstComp />
+            </MainComp>
+        </div>
     );
 }
 
