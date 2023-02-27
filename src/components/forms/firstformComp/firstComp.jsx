@@ -4,7 +4,7 @@ import ShowSwapperButton from './showSwapperButton';
 
 const FirstComp = () => {
     const [show, setShow] = useState(false);
-    
+
     const swapperButtonObj = {
         show,
         setShow,
@@ -13,7 +13,7 @@ const FirstComp = () => {
     return (
         <>
             <ShowSwapperButton swapperButtonObj={swapperButtonObj} />
-            {show && <FirstForm/>}
+            {show && <FirstForm />}
         </>
     );
 };

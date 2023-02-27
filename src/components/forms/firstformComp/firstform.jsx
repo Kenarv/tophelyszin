@@ -1,4 +1,3 @@
-
 const FirstForm = () => {
     return (
         <div className="animate-form-animation flex flex-col gap-2 w-[30rem]  mx-auto form-animation p-20 bg-sky-300/30 rounded-xl shadow-lg">
@@ -29,7 +28,9 @@ const FirstForm = () => {
                     className="transition duration-300 ease-in-out text-xl w-35 px-5 py-1 text-white rounded-3xl bg-sky-400/30 hover:bg-sky-300/50 shadow-lg"
                     onClick={() => ''}
                 >
-                    <p className='text-slate-700 font-semibold text-base'>Belépés</p> 
+                    <p className="text-slate-700 font-semibold text-base">
+                        Belépés
+                    </p>
                 </button>
             </div>
         </div>
