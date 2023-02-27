@@ -5,6 +5,15 @@ module.exports = {
             backgroundImage: {
                 wedding: "url('./media/background.jpg')",
             },
+            keyframes: {
+                'form-opacity': {
+                    '0%': { opacity: 0 },
+                    '100%': { opacity: 1 },
+                },
+            },
+            animation: {
+                'form-animation': 'form-opacity 1s ease-in-out',
+            },
         },
     },
     plugins: [],
