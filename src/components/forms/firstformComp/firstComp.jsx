@@ -1,9 +1,11 @@
 import LoginForm from './loginForm';
 import StartPage from '../../staticPages/startPageComp';
-const FirstComp = ({ showLogin }) => {
+import RegForm from './regFrom';
+const FirstComp = ({ showLogin,showReg }) => {
     return (
         <>
             {showLogin ?< LoginForm showLogin={showLogin} />:<StartPage/>}
+            {showReg ? <RegForm showReg={showReg} />  :<StartPage/> }
         </>
     );
 };

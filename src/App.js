@@ -7,18 +7,27 @@ function App() {
 
     const [showLogin, setShowLogin] = useState(false);
 
+    
+
+    const [showReg, setShowReg] = useState(false);
+
+
+    const regShowButtonObj = {
+        showReg,
+        setShowReg,
+    }
+
     const loginShowButtonObj = {
         showLogin,
         setShowLogin,
     }
 
-
     return (
         <div className="h-screen overflow-hidden md:container lg">
-            <HeaderComp loginShowButtonObj={loginShowButtonObj}/>
+            <HeaderComp loginShowButtonObj={loginShowButtonObj} regShowButtonObj={regShowButtonObj}/>
             <MainComp>
                 {' '}
-                <FirstComp showLogin={showLogin} />
+                <FirstComp showLogin={showLogin} showReg={showReg}/>
             </MainComp>
         </div>
     );
