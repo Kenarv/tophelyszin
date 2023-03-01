@@ -1,4 +1,4 @@
-const FirstForm = () => {
+const LoginForm = () => {
     return (
         <div className="animate-form-animation flex flex-col gap-2 w-[30rem]  mx-auto form-animation p-20 bg-sky-300/30 rounded-xl shadow-lg">
             <div className="flex flex-col">
@@ -37,4 +37,4 @@ const FirstForm = () => {
     );
 };
 
-export default FirstForm;
+export default LoginForm;

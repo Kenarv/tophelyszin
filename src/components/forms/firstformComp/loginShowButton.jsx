@@ -1,14 +1,14 @@
-const ShowSwapperButton = props => {
-    const { show, setShow } = props.swapperButtonObj;
+const LoginShowButton = props => {
+    const { showLogin, setShowLogin } = props.loginShowButtonObj;
 
     return (
         <button
             className="transition duration-300 ease-in-out text-xl w-35 px-6 py-2 ml-15 text-white rounded-3xl bg-sky-300/30 hover:bg-sky-400/50 shadow-lg"
-            onClick={!show ? () => setShow(true) : () => setShow(false)}
+            onClick={!showLogin? () => setShowLogin(true) : () => setShowLogin(false)}
         >
             <p className="text-slate-700 font-semibold text-lg">Belépés</p>
         </button>
     );
 };
 
-export default ShowSwapperButton;
+export default LoginShowButton;

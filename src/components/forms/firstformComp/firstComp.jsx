@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import FirstForm from './firstform';
-import ShowSwapperButton from './showSwapperButton';
+import LoginForm from './loginForm';
+import LoginShowButton from './loginShowButton';
 
 const FirstComp = () => {
-    const [show, setShow] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
 
-    const swapperButtonObj = {
-        show,
-        setShow,
+    const loginShowButtonObj = {
+        showLogin,
+        setShowLogin,
     };
 
     return (
         <>
-            <ShowSwapperButton swapperButtonObj={swapperButtonObj} />
-            {show && <FirstForm />}
+            <LoginShowButton loginShowButtonObj={loginShowButtonObj} />
+            {showLogin && <LoginForm />}
         </>
     );
 };
