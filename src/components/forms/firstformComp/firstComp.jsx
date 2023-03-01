@@ -4,6 +4,8 @@ import RegForm from './regFrom';
 const FirstComp = ({ showLogin,showReg }) => {
     return (
         <>
+            
+
             {showLogin ?< LoginForm showLogin={showLogin} />:<StartPage/>}
             {showReg ? <RegForm showReg={showReg} />  :<StartPage/> }
         </>

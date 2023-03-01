@@ -13,9 +13,11 @@ const HeaderComp = props => {
                 />
                 <LoginShowButton
                     loginShowButtonObj={props.loginShowButtonObj}
+                    regShowButtonObj={props.regShowButtonObj}
                 />
                 <RegShowButton 
-                    regShowButtonObj={props.regShowButtonObj} 
+                    regShowButtonObj={props.regShowButtonObj}
+                    loginShowButtonObj={props.loginShowButtonObj}
                 />
             </div>
         </div>

@@ -1,5 +1,6 @@
 const LoginShowButton = props => {
     const { showLogin, setShowLogin } = props.loginShowButtonObj;
+    const {  setShowReg } = props.regShowButtonObj;
 
     return (
         <button
@@ -10,8 +11,8 @@ const LoginShowButton = props => {
             } shadow-lg`}
             onClick={
                 !showLogin
-                    ? () => setShowLogin(true)
-                    : () => setShowLogin(false)
+                    ? () => setShowLogin(true) && setShowReg(false)
+                    : () => setShowLogin(false) && setShowReg(true)
             }
         >
             <p className="text-slate-700 font-semibold text-lg">Belépés</p>
