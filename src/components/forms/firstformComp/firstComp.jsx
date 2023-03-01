@@ -1,9 +1,9 @@
 import LoginForm from './loginForm';
-
+import StartPage from '../../staticPages/startPageComp';
 const FirstComp = ({ showLogin }) => {
     return (
         <>
-            <LoginForm showLogin={showLogin} />
+            {showLogin ?< LoginForm showLogin={showLogin} />:<StartPage/>}
         </>
     );
 };

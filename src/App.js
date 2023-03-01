@@ -12,8 +12,9 @@ function App() {
         setShowLogin,
     }
 
+
     return (
-        <div className="h-screen overflow-hidden">
+        <div className="h-screen overflow-hidden md:container lg">
             <HeaderComp loginShowButtonObj={loginShowButtonObj}/>
             <MainComp>
                 {' '}
