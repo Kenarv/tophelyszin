@@ -48,7 +48,7 @@ const RegForm = () => {
         <div className="flex flex-row gap-20">
             <button
                 className="transition duration-300 ease-in-out text-xl w-35 px-5 py-1 text-white rounded-3xl bg-sky-400/30 hover:bg-sky-300/50 shadow-lg"
-                onClick={() => ''}
+                onClick={() => ''}  //innen megy majd a feltöltés az adatbázisba
             >
                 <p className="text-slate-700 font-semibold text-base">
                     Regisztráció
