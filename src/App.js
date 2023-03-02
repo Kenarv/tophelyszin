@@ -23,7 +23,7 @@ function App() {
     }
 
     return (
-        <div className="h-screen overflow-hidden md:container lg">
+        <div className="h-screen overflow-hidden ">
             <HeaderComp loginShowButtonObj={loginShowButtonObj} regShowButtonObj={regShowButtonObj}/>
             <MainComp>
                 {' '}
