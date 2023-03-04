@@ -2,6 +2,7 @@ const RegShowButton = props => {
     const { showReg, setShowReg } = props.regShowButtonObj;
     const {  setShowLogin } = props.loginShowButtonObj;
 
+    
     const handleClick = (login, reg) => {
         setShowLogin(login);
         setShowReg(reg);

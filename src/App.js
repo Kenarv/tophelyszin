@@ -1,6 +1,7 @@
 import HeaderComp from './components/header/headerComp';
 import MainComp from './components/main/mainComp';
-import FirstComp from './components/forms/firstformComp/firstComp';
+import FirstComp from './components/main/firstComp';
+import StartPage from './components/staticPages/startPageComp';
 import { useState } from 'react';
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
     const [showReg, setShowReg] = useState(false);
 
 
+    const [showStart, setShowStart] = useState(false);
+
+
     const regShowButtonObj = {
         showReg,
         setShowReg,
@@ -21,8 +25,9 @@ function App() {
         showLogin,
         setShowLogin,
     }
-
     
+    
+
     return (
         <div className="h-screen overflow-hidden ">
             <HeaderComp loginShowButtonObj={loginShowButtonObj} regShowButtonObj={regShowButtonObj}/>
