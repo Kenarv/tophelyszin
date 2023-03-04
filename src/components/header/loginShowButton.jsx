@@ -1,6 +1,11 @@
 const LoginShowButton = props => {
     const { showLogin, setShowLogin } = props.loginShowButtonObj;
-    const {  setShowReg } = props.regShowButtonObj;
+    const { setShowReg } = props.regShowButtonObj;
+
+    const handleClick = (login, reg) => {
+        setShowLogin(login);
+        setShowReg(reg);
+    };
 
     return (
         <button
@@ -9,11 +14,7 @@ const LoginShowButton = props => {
                     ? 'bg-sky-300/30 hover:bg-sky-400/50'
                     : 'bg-red-300/30 hover:bg-red-400/50'
             } shadow-lg`}
-            onClick={
-                !showLogin
-                    ? () => setShowLogin(true) && setShowReg(false)
-                    : () => setShowLogin(false) && setShowReg(true)
-            }
+            onClick={() => handleClick(false, true)}
         >
             <p className="text-slate-700 font-semibold text-lg">Belépés</p>
         </button>

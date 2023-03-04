@@ -22,6 +22,7 @@ function App() {
         setShowLogin,
     }
 
+    
     return (
         <div className="h-screen overflow-hidden ">
             <HeaderComp loginShowButtonObj={loginShowButtonObj} regShowButtonObj={regShowButtonObj}/>

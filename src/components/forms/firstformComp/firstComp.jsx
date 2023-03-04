@@ -5,8 +5,12 @@ const FirstComp = ({ showLogin,showReg }) => {
     return (
         <>
             
+            
+            
+            
+            
 
-            {showLogin ?< LoginForm showLogin={showLogin} />:<StartPage/>}
+            {showLogin ?<LoginForm showLogin={showLogin} />:<StartPage/>}
             {showReg ? <RegForm showReg={showReg} />  :<StartPage/> }
         </>
     );

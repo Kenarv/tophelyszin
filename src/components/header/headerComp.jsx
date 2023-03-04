@@ -4,12 +4,12 @@ import RegShowButton from './regShowButton copy';
 
 const HeaderComp = props => {
     return (
-        <div className="z-10 w-full h-16 bg-sky-200/50 items-center justify-center">
+        <div className="z-10 w-full h-20 bg-sky-200/50 items-center justify-center">
             <div className="h-full flex items-center">
                 <img
                     src={th_logo}
                     alt="th_logo"
-                    className="h-1/2 align-center ml-5 mr-10 select-none"
+                    className="align-center ml-5 mr-5 select-none w-50 h-20 "
                 />
                 <LoginShowButton
                     loginShowButtonObj={props.loginShowButtonObj}
