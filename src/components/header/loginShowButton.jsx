@@ -14,7 +14,7 @@ const LoginShowButton = props => {
                     ? 'bg-sky-300/30 hover:bg-sky-400/50'
                     : 'bg-red-300/30 hover:bg-red-400/50'
             } shadow-lg`}
-            onClick={() => handleClick(false, true)}
+            onClick={() => {!showLogin ? handleClick(true, false) : handleClick(false, false)}}
         >
             <p className="text-slate-700 font-semibold text-lg">Belépés</p>
         </button>

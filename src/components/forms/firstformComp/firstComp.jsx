@@ -11,7 +11,7 @@ const FirstComp = ({ showLogin,showReg }) => {
             
 
             {showLogin ?<LoginForm showLogin={showLogin} />:<StartPage/>}
-            {showReg ? <RegForm showReg={showReg} />  :<StartPage/> }
+            {showReg && <RegForm showReg={showReg} />}
         </>
     );
 };

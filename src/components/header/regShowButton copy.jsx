@@ -14,7 +14,7 @@ const RegShowButton = props => {
                     : 'bg-red-300/30 hover:bg-red-400/50'
             } shadow-lg`}
 
-                onClick={() => handleClick (true, false)}
+            onClick={() => {!showReg ? handleClick(false, true) : handleClick(false, false)}}
             
         >
             <p className="text-slate-700 font-semibold text-lg">Regisztáció</p>
