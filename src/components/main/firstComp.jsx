@@ -1,15 +1,20 @@
 import LoginForm from '../forms/loginForm';
 import RegForm from '../forms/regFrom';
-import StartPage from '../staticPages/startPageComp';
-const FirstComp = ({ showLogin, showReg }) => {
+import StartPage from '../Pages/startPageComp';
+import SearchForm from '../forms/searchForm';
+const FirstComp = ({ showLogin, showReg, searchShowButtonObj }) => {
+    const { showSearch } = searchShowButtonObj;
+
     return (
         <>
             {showLogin ? (
                 <LoginForm showLogin={showLogin} />
             ) : showReg ? (
                 <RegForm showReg={showReg} />
+            ) : showSearch ? (
+                <SearchForm searchShowButtonObj={searchShowButtonObj}/>
             ) : (
-                <StartPage />
+                <StartPage searchShowButtonObj={searchShowButtonObj} />
             )}
         </>
     );

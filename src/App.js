@@ -9,6 +9,8 @@ function App() {
 
     const [showReg, setShowReg] = useState(false);
 
+    const [showSearch, setShowSearch] = useState(false);
+
     const regShowButtonObj = {
         showReg,
         setShowReg,
@@ -19,12 +21,16 @@ function App() {
         setShowLogin,
     }
     
+    const searchShowButtonObj = {
+        showSearch,
+        setShowSearch
+    }
     return (
-        <div className="h-screen overflow-hidden ">
+        <div className="h-screen ">
             <HeaderComp loginShowButtonObj={loginShowButtonObj} regShowButtonObj={regShowButtonObj}/>
             <MainComp>
                 {' '}
-                <FirstComp showLogin={showLogin} showReg={showReg}/>
+                <FirstComp showLogin={showLogin} showReg={showReg} searchShowButtonObj={searchShowButtonObj}/>
             </MainComp>
         </div>
     );
