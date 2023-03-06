@@ -14,7 +14,7 @@ const SearchShowButton = props => {
         } shadow-lg`}
         onClick={() => {!showSearch ? setShowSearch(true) : setShowSearch(false)}}
     >
-        <p className="text-slate-700 font-semibold text-lg">Keresés</p>
+        <p className="text-slate-700 font-semibold text-lg">{!showSearch ?"Keresés":"vissza"}</p>
     </button>
     )
 }
