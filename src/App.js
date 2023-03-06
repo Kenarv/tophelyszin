@@ -13,9 +13,6 @@ function App() {
     const [showReg, setShowReg] = useState(false);
 
 
-    const [showStart, setShowStart] = useState(false);
-
-
     const regShowButtonObj = {
         showReg,
         setShowReg,
