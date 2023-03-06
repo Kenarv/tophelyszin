@@ -14,7 +14,7 @@ const StartPage = props => {
 
 
         </div>
-        <div className="grid justify-items-center">
+        <div className="grid justify-items-center animate-pulse">
             <SearchShowButton searchShowButtonObj={props.searchShowButtonObj}/>
 
         </div>
