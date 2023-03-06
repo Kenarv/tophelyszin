@@ -48,7 +48,11 @@ const SearchForm = props => {
                         <label className="font-bold py-2" htmlFor="Kapacitas">
                             Válassza ki a kívánt kapacitást:
                         </label>
-                        <select name="Kapacitas" id="KapacitasID"  className="my-3">
+                        <select
+                            name="Kapacitas"
+                            id="KapacitasID"
+                            className="my-3"
+                        >
                             <option value="20-60 fő">20-60 fő</option>
                             <option value="60-150 fő">60-150 fő</option>
                             <option value="150+ fő">150+ fő</option>
@@ -59,13 +63,11 @@ const SearchForm = props => {
                             A helyszín szolgáltassa az ételt ?
                         </p>
                         <div className="row space-x-2 p-3">
-                            
                             <input
                                 type="checkbox"
                                 id="EtelVanID"
                                 name="EtelVan"
                                 value="1"
-                                
                             />
 
                             <label htmlFor="EtelVan">Igen</label>
@@ -127,7 +129,7 @@ const SearchForm = props => {
                         <label className="font-bold py-2" htmlFor="Tancter">
                             Mekkora legyen a tánctér:
                         </label>
-                        <select name="Tancter" id="TancterID"  className="my-3">
+                        <select name="Tancter" id="TancterID" className="my-3">
                             <option value="kis tánctér(30-40 &#13217;)">
                                 kis tánctér(30-40 &#13217;)
                             </option>
@@ -189,7 +191,11 @@ const SearchForm = props => {
                         <label className="font-bold py-2" htmlFor="Tancter">
                             Árkategória:
                         </label>
-                        <select name="Arkategoria" id="ArkategoriaID" className="my-3">
+                        <select
+                            name="Arkategoria"
+                            id="ArkategoriaID"
+                            className="my-3"
+                        >
                             <option value="Szerény">Szerény</option>
                             <option value="Átlagos">Átlagos</option>
                             <option value="Premium">Premium</option>
