@@ -6,9 +6,7 @@ import UploadForm from './components/forms/uploadForm';
 
 function App() {
     const [showLogin, setShowLogin] = useState(false);
-
     const [showReg, setShowReg] = useState(false);
-
     const [showSearch, setShowSearch] = useState(false);
 
     const regShowButtonObj = {
@@ -25,6 +23,7 @@ function App() {
         showSearch,
         setShowSearch,
     };
+    
     return (
         <div className="h-screen overflow-hidden ">
             <HeaderComp
@@ -33,13 +32,12 @@ function App() {
             />
             <MainComp>
                 {' '}
-                
-                    <FirstComp
-                        showLogin={showLogin}
-                        showReg={showReg}
-                        searchShowButtonObj={searchShowButtonObj}
-                    />
-                    {/* <UploadForm/>  */}
+                <FirstComp
+                    showLogin={showLogin}
+                    showReg={showReg}
+                    searchShowButtonObj={searchShowButtonObj}
+                />
+                {/* <UploadForm/>  */}
             </MainComp>
         </div>
     );

@@ -9,16 +9,18 @@ const HeaderComp = props => {
                 <img
                     src={th_logo}
                     alt="th_logo"
-                    className="align-center ml-5 mr-5 select-none w-50 h-20 "
+                    className="align-center ml-5 mr-2 select-none w-50 h-20 "
                 />
-                <LoginShowButton
-                    loginShowButtonObj={props.loginShowButtonObj}
-                    regShowButtonObj={props.regShowButtonObj}
-                />
-                <RegShowButton 
-                    regShowButtonObj={props.regShowButtonObj}
-                    loginShowButtonObj={props.loginShowButtonObj}
-                />
+                <div className=" flex flex-row gap-5">
+                    <LoginShowButton
+                        loginShowButtonObj={props.loginShowButtonObj}
+                        regShowButtonObj={props.regShowButtonObj}
+                    />
+                    <RegShowButton
+                        regShowButtonObj={props.regShowButtonObj}
+                        loginShowButtonObj={props.loginShowButtonObj}
+                    />
+                </div>
             </div>
         </div>
     );

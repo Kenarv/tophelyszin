@@ -3,7 +3,7 @@ import SearchShowButton from '../Pages/searchShowButton';
 const SearchForm = props => {
     return (
         <>
-            <div className="animate-form-animation flex flex-col gap-2 w-[30rem]  mx-auto form-animation p-20 bg-sky-300/30 rounded-xl shadow-lg">
+            <div className="animate-form-animation flex flex-col gap-2 w-[40rem]  mx-auto form-animation p-20 bg-sky-300/50 rounded-xl shadow-2xl">
                 <form action="">
                     <div className="flex flex-col">
                         <label className="font-bold py-2" htmlFor="MegyeNev">
