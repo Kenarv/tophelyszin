@@ -2,6 +2,7 @@ import HeaderComp from './components/header/headerComp';
 import MainComp from './components/main/mainComp';
 import FirstComp from './components/main/firstComp';
 import { useState } from 'react';
+import UploadForm from './components/forms/uploadForm';
 
 function App() {
     const [showLogin, setShowLogin] = useState(false);
@@ -38,7 +39,7 @@ function App() {
                         showReg={showReg}
                         searchShowButtonObj={searchShowButtonObj}
                     />
-                
+                    {/* <UploadForm/>  */}
             </MainComp>
         </div>
     );

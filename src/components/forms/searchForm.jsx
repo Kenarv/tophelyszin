@@ -52,6 +52,7 @@ const SearchForm = props => {
                             name="Kapacitas"
                             id="KapacitasID"
                             className="my-3"
+                           
                         >
                             <option value="20-60 fő">20-60 fő</option>
                             <option value="60-150 fő">60-150 fő</option>
@@ -64,21 +65,20 @@ const SearchForm = props => {
                         </p>
                         <div className="row space-x-2 p-3">
                             <input
-                                type="checkbox"
+                                type="radio"
                                 id="EtelVanID"
-                                name="EtelVan"
+                                name="Etel"
                                 value="1"
                             />
+                            <label>Igen</label>
 
-                            <label htmlFor="EtelVan">Igen</label>
                             <input
-                                type="checkbox"
+                                type="radio"
                                 id="EtelNincsID"
-                                name="EtelNincs"
+                                name="Etel"
                                 value="0"
                             />
-
-                            <label htmlFor="EtelNincs">Nem</label>
+                            <label>Nem</label>
                         </div>
                     </div>
                     <div className="flex flex-col">
@@ -87,42 +87,40 @@ const SearchForm = props => {
                         </p>
                         <div className="row space-x-2 p-3">
                             <input
-                                type="checkbox"
+                                type="radio"
                                 id="ItalVanID"
-                                name="ItallVan"
+                                name="Ital"
                                 value="1"
                             />
+                            <label>Igen</label>
 
-                            <label htmlFor="ItalVan">Igen</label>
                             <input
-                                type="checkbox"
+                                type="radio"
                                 id="ItalNincsID"
-                                name="ItalNincs"
+                                name="Ital"
                                 value="0"
                             />
-
-                            <label htmlFor="ItalNincs">Nem</label>
+                            <label>Nem</label>
                         </div>
                     </div>
                     <div className="flex flex-col">
                         <p className="font-bold py-2">Klimatizált legyen ?</p>
                         <div className="row space-x-2 p-3">
                             <input
-                                type="checkbox"
+                                type="radio"
                                 id="KlimaVanID"
-                                name="KlimalVan"
+                                name="Klima"
                                 value="1"
                             />
+                            <label>Igen</label>
 
-                            <label htmlFor="KlimaVan">Igen</label>
                             <input
-                                type="checkbox"
+                                type="radio"
                                 id="KlimaNincsID"
-                                name="KlimaNincs"
+                                name="Klima"
                                 value="0"
                             />
-
-                            <label htmlFor="klimaNincs">Nem</label>
+                            <label>Nem</label>
                         </div>
                     </div>
                     <div className="flex flex-col">
@@ -147,21 +145,19 @@ const SearchForm = props => {
                         </p>
                         <div className="row space-x-2 p-3">
                             <input
-                                type="checkbox"
+                                type="radio"
                                 id="ParkoloVanID"
-                                name="ParkoloVan"
+                                name="Parkolo"
                                 value="1"
                             />
-
-                            <label htmlFor="ParkoloVan">Igen</label>
+                            <label>Igen</label>
                             <input
-                                type="checkbox"
+                                type="radio"
                                 id="ParkoloNincsID"
-                                name="ParkoloNincs"
+                                name="Parkolo"
                                 value="0"
                             />
-
-                            <label htmlFor="ParkoloNincs">Nem</label>
+                            <label>Nem</label>
                         </div>
                     </div>
                     <div className="flex flex-col">
@@ -170,21 +166,20 @@ const SearchForm = props => {
                         </p>
                         <div className="row space-x-2 p-3">
                             <input
-                                type="checkbox"
+                                type="radio"
                                 id="SzallasVanID"
-                                name="SzallasVan"
+                                name="Szallas"
                                 value="1"
                             />
+                            <label>Igen</label>
 
-                            <label htmlFor="SzallasVan">Igen</label>
                             <input
-                                type="checkbox"
+                                type="radio"
                                 id="SzallasNincsID"
-                                name="SzallasNincs"
+                                name="Szallas"
                                 value="0"
                             />
-
-                            <label htmlFor="SzallasNincs">Nem</label>
+                            <label>Nem</label>
                         </div>
                     </div>
                     <div className="flex flex-col py-3">
