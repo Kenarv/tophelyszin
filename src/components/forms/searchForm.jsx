@@ -3,7 +3,7 @@ import SearchShowButton from '../Pages/searchShowButton';
 const SearchForm = props => {
     return (
         <>
-            <div className="animate-form-animation flex flex-col gap-2 w-[40rem]  mx-auto form-animation p-20 bg-sky-300/50 rounded-xl shadow-2xl">
+            <div className="animate-form-animation flex flex-col gap-2 w-[390px] md:w-[800px] mx-auto form-animation p-20 bg-sky-300/50 rounded-xl shadow-2xl">
                 <form action="">
                     <div className="flex flex-col">
                         <label className="font-bold py-2" htmlFor="MegyeNev">
@@ -79,6 +79,7 @@ const SearchForm = props => {
                                 value="0"
                             />
                             <label>Nem</label>
+                            
                         </div>
                     </div>
                     <div className="flex flex-col">
