@@ -1,4 +1,4 @@
-import th_logo from '../../media/tophelyszin_logo.png';
+import th_logo from '../../media/Th-logo.png';
 import LoginShowButton from './loginShowButton';
 import RegShowButton from './regShowButton copy';
 
@@ -9,7 +9,7 @@ const HeaderComp = props => {
                 <img
                     src={th_logo}
                     alt="th_logo"
-                    className="align-center ml-5 mr-2 select-none w-50 h-20 "
+                    className="align-center ml-5 mr-10 select-none w-50 h-20 "
                 />
                 <div className=" flex flex-row gap-5">
                     <LoginShowButton
