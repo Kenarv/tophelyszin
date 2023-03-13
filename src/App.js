@@ -37,7 +37,7 @@ function App() {
                     showReg={showReg}
                     searchShowButtonObj={searchShowButtonObj}
                 />
-                {/* <UploadForm/>  */}
+                <UploadForm/> 
             </MainComp>
         </div>
     );
