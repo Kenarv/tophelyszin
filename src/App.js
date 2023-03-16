@@ -3,6 +3,7 @@ import MainComp from './components/main/mainComp';
 import FirstComp from './components/main/firstComp';
 import { useState } from 'react';
 import UploadForm from './components/forms/uploadForm';
+import ProfilPage from './components/Pages/profilPage';
 
 function App() {
     const [showLogin, setShowLogin] = useState(false);
@@ -37,7 +38,8 @@ function App() {
                     showReg={showReg}
                     searchShowButtonObj={searchShowButtonObj}
                 />
-                <UploadForm/> 
+                <ProfilPage/>
+                {/* <UploadForm/>  */}
             </MainComp>
         </div>
     );
