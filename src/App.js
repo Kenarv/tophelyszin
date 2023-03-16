@@ -9,7 +9,9 @@ function App() {
     const [showLogin, setShowLogin] = useState(false);
     const [showReg, setShowReg] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
+    const [showUpload, setShowUpload] = useState(false);
 
+    
     const regShowButtonObj = {
         showReg,
         setShowReg,
@@ -25,6 +27,12 @@ function App() {
         setShowSearch,
     };
     
+    const uploadShowButtonObj = {
+        showUpload,
+        setShowUpload,
+    };
+
+
     return (
         <div className="h-screen overflow-hidden ">
             <HeaderComp
@@ -38,8 +46,8 @@ function App() {
                     showReg={showReg}
                     searchShowButtonObj={searchShowButtonObj}
                 />
-                <ProfilPage/>
-                {/* <UploadForm/>  */}
+                <ProfilPage uploadShowButtonObj={uploadShowButtonObj} />
+                 {showUpload && <UploadForm/>} 
             </MainComp>
         </div>
     );
