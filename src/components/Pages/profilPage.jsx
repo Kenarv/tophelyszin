@@ -8,13 +8,13 @@ const ProfilPage = ({ uploadShowButtonObj }) => {
                     <div className="w-2/5 ">
                         <h1 className="text-3xl font-bold">Gipsz Jakab</h1>
                         <div className="text-base columns-1 desktop:columns-2 gap-2 py-2">
-                            <div className="flex ">
+                            <div className="flex items-center gap-2">
                                 
                                 <AiOutlineMail/>
                                 <p>Email@Email</p>
                                  
                             </div>
-                            <div className="flex">
+                            <div className="flex items-center gap-2">
                                 <AiOutlinePhone/>
                                 <p>+36301234567</p>
                             </div>
