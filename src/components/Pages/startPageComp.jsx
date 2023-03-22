@@ -11,19 +11,19 @@ const StartPage = props => {
                         </h1>
                     </div>
                     <div>
-                        <h1 className="font-bold text-xl">
+                        <h1 className="font-bold text-xl py-5">
                             Mekkora rendezvényt tervez?
                         </h1>
-                        <div className="text-blue-800 px-3 py-3">
+                        <div className="text-slate-200 px-3 py-3 bg-sky-700/30 rounded-3xl italic">
                             <ul>
                                 <li>
                                     Általánosságban elmondható, hogy a
                                     rendezvények nagyságát tekintve a következő
                                     kategóriák fordulnak elő:
                                 </li>
-                                <li>kisebb (rendezvény 60 fő alatt)</li>
-                                <li>közepes (rendezvény 60-120 főközött)</li>
-                                <li>nagy (120 fő felett)</li>
+                                <li>- kisebb (rendezvény 60 fő alatt)</li>
+                                <li>- közepes (rendezvény 60-120 főközött)</li>
+                                <li>- nagy (120 fő felett)</li>
                                 <li>
                                     Ez a legfontosabb paraméter, hiszen sok
                                     helyszín kieshet, ha nincs megfelelő
@@ -33,11 +33,11 @@ const StartPage = props => {
                         </div>
                     </div>
                     <div>
-                        <h1 className="font-bold text-xl ">
-                            Mikor, mely évszakban szeretné a rendezvényt?
+                        <h1 className="font-bold text-xl py-5">
+                            Mikor, mely évszakban szeretné a rendezvényt?
                         </h1>
 
-                        <div className="text-blue-800 px-3 py-3">
+                        <div className="text-slate-200 px-3 py-3 bg-sky-700/30 rounded-3xl italic">
                             <ul>
                                 <li>
                                     Az évszak nagymértékben befolyásolja, hogy
@@ -48,10 +48,10 @@ const StartPage = props => {
                         </div>
                     </div>
                     <div>
-                        <h1 className="font-bold text-xl">
+                        <h1 className="font-bold text-xl py-5">
                             Az ország mely területén?
                         </h1>
-                        <div className="text-blue-800 px-3 py-3">
+                        <div className="text-slate-200 px-3 py-3 bg-sky-700/30 rounded-3xl italic">
                             <ul>
                                 <li>
                                     Melyik városban szeretnék a rendezvényt
@@ -73,7 +73,7 @@ const StartPage = props => {
                                 <li>
                                     Ha megvan a pontos helyszín, akkor át
                                     kellene gondolni, hogy a vendégek közül
-                                    körülbelül hány főnek lesz szüksége
+                                    körülbelül hány főnek lesz szüksége
                                     szállásra. Érdemes információt gyűjteni a
                                     környező apartmanokról, hotelekről, hogy
                                     melyik mekkora férőhellyel (kapacitással)
@@ -82,12 +82,12 @@ const StartPage = props => {
                             </ul>
                         </div>
                         <div>
-                        <h1 className="font-bold text-xl ">
+                        <h1 className="font-bold text-xl py-5">
                         Milyen stílusú rendezvényt szeretne?  
 
                         </h1>
 
-                        <div className="text-blue-800 px-3 py-3">
+                        <div className="text-slate-200 px-3 py-3 bg-sky-700/30 rounded-3xl italic">
                             <ul>
                                 <li>
                                 Passzol-e a rendezvény helyszíne annak tartalmát tekintve?
@@ -96,12 +96,11 @@ const StartPage = props => {
                         </div>
                     </div>
                     <div>
-                        <h1 className="font-bold text-xl ">
+                        <h1 className="font-bold text-xl py-5 ">
                         Speciális igények?  
-
                         </h1>
 
-                        <div className="text-blue-800 px-3 py-3">
+                        <div className="text-slate-200 px-3 py-3 bg-sky-700/30 rounded-3xl italic">
                             <ul>
                                 <li>
                                 A rendezvény megkövetel az általános szolgáltatásokon kívül, egyedi speciális megvalósítást, valamint igényeket.
@@ -111,7 +110,7 @@ const StartPage = props => {
                     </div>
                     </div>
                 </div>
-                <div className="grid justify-items-center animate-pulse">
+                <div className="grid justify-items-center animate-pulse py-5">
                     <SearchShowButton
                         searchShowButtonObj={props.searchShowButtonObj}
                     />
