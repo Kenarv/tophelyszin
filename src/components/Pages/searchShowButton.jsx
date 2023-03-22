@@ -7,7 +7,7 @@ const SearchShowButton = props => {
 
     return(
         <button
-        className={`transition duration-300 ease-in-out text-xl w-35 px-6 py-2 ml-15 text-white rounded-3xl ${
+        className={`transition duration-300 ease-in-out text-xl w-52 px-6 py-2 ml-15 text-white rounded-3xl ${
             !showSearch
                 ? 'bg-sky-300/30 hover:bg-sky-400/50'
                 : 'bg-red-300/30 hover:bg-red-400/50'

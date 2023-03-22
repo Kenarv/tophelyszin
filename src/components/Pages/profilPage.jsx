@@ -7,10 +7,10 @@ const ProfilPage = ({ uploadShowButtonObj }) => {
                 <div className="grid grid-rows-3">
                     <div className="w-2/5 ">
                         <h1 className="text-2xl font-bold">Helyszín neve</h1>
-                        <div className="text-base columns-1 desktop:columns-2 gap-2">
-                            <div className="flex align-center ">
-                                <AiOutlineMail className="text"/>
-                                <p>Email@Email</p>
+                        <div className="text-base columns-1 desktop:columns-2 gap-2 py-2">
+                            <div className="flex ">
+                                <AiOutlineMail className="align-middle"/>
+                                <p >Email@Email</p>
                             </div>
                             <div className="flex">
                                 <AiOutlinePhone/>
@@ -18,7 +18,7 @@ const ProfilPage = ({ uploadShowButtonObj }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="border-solid border-sky-500 rounded-lg border-2 ">
+                    <div className="border-solid border-sky-500 rounded-lg border-2 p-10">
                         "itt lesznek a helyszin profilon található feltöltések"
                     </div>
                     <div className=" grid justify-items-center">
