@@ -1,15 +1,26 @@
 import SearchShowButton from './searchShowButton';
+import WordboxAnimated from './wordboxAnimated';
 
 const StartPage = props => {
     return (
         <>
             <div className="animate-form-animation flex flex-col gap-2 w-[360px] desktop:w-[1200px] mx-auto form-animation p-20 bg-sky-500/30 rounded-xl shadow-lg">
                 <div className="text-center mt-15 drop-shadow-3xl">
+
+                
+
+
+
+
+
+
                     <div className="w-35 desktop:w-full">
                         <h1 className="font-bold text-4xl my-10 ">
                             Segítség a jó helyszínválasztáshoz:
                         </h1>
                     </div>
+                
+                        <div>
                     <div>
                         <h1 className="font-bold text-xl py-5">
                             Mekkora rendezvényt tervez?
@@ -81,36 +92,37 @@ const StartPage = props => {
                                 </li>
                             </ul>
                         </div>
+                            <h1 className="font-bold text-xl py-5">
+                                Milyen stílusú rendezvényt szeretne?
+                            </h1>
+
+                            <div className="text-slate-200 px-3 py-3 bg-sky-700/30 rounded-3xl italic">
+                                <ul>
+                                    <li>
+                                        Passzol-e a rendezvény helyszíne annak
+                                        tartalmát tekintve?
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         <div>
-                        <h1 className="font-bold text-xl py-5">
-                        Milyen stílusú rendezvényt szeretne?  
+                            <h1 className="font-bold text-xl py-5 ">
+                                Speciális igények?
+                            </h1>
 
-                        </h1>
-
-                        <div className="text-slate-200 px-3 py-3 bg-sky-700/30 rounded-3xl italic">
-                            <ul>
-                                <li>
-                                Passzol-e a rendezvény helyszíne annak tartalmát tekintve?
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div>
-                        <h1 className="font-bold text-xl py-5 ">
-                        Speciális igények?  
-                        </h1>
-
-                        <div className="text-slate-200 px-3 py-3 bg-sky-700/30 rounded-3xl italic">
-                            <ul>
-                                <li>
-                                A rendezvény megkövetel az általános szolgáltatásokon kívül, egyedi speciális megvalósítást, valamint igényeket.
-                                </li>
-                            </ul>
-                        </div>
+                            <div className="text-slate-200 px-3 py-3 bg-sky-700/30 rounded-3xl italic">
+                                <ul>
+                                    <li>
+                                        A rendezvény megkövetel az általános
+                                        szolgáltatásokon kívül, egyedi speciális
+                                        megvalósítást, valamint igényeket.
+                                    </li>
+                                </ul>
+                            </div>
+                       </div>
                     </div>
                     </div>
-                </div>
-                <div className="grid justify-items-center animate-pulse py-5">
+                    <div className="grid justify-items-center animate-pulse py-5">
                     <SearchShowButton
                         searchShowButtonObj={props.searchShowButtonObj}
                     />

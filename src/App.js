@@ -46,8 +46,8 @@ function App() {
                     showReg={showReg}
                     searchShowButtonObj={searchShowButtonObj}
                 />
-                <ProfilPage uploadShowButtonObj={uploadShowButtonObj} />
-                 {showUpload && <UploadForm/>} 
+                {/* <ProfilPage uploadShowButtonObj={uploadShowButtonObj} />
+                 {showUpload && <UploadForm/>}  */}
             </MainComp>
         </div>
     );
