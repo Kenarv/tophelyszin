@@ -54,13 +54,9 @@ const ProfilPage = ({ uploadShowButtonObj }) => {
                                             <img
                                                 src={element.kep}
                                                 alt={element.name}
-                                                className="w-1/2 h-1/2 rounded-full"
+                                                className="w-[200px] h-[200px] rounded-xl"
                                             />
-                                            <img
-                                                src="./kezd.jpg"
-                                                alt={element.name}
-                                                className="w-1/2 h-1/2 rounded-full"
-                                            />
+                                            
                                         </div>
 
                                         <div className="col-span-2">
