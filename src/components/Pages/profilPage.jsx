@@ -9,26 +9,26 @@ const ProfilPage = ({ uploadShowButtonObj }) => {
                 <div className=" p-10 grid-flow-row auto-rows-max">
                     <div className="w-2/5 mb-5">
                         <div className=" flex items-center border-b-2 border-sky-500 pb-2">
-                            <h1 className="text-3xl font-bold mr-2">Gipsz Jakab</h1>
+                            <h1 className="text-3xl font-bold mr-2">
+                                Gipsz Jakab
+                            </h1>
                             <div>
-
-                            <button
-                                className="transition duration-300 ease-in-out bg-red-500/70 text-xl h-5 w-17 px-3  hover:bg-red-200/70 text-white rounded-3xl shadow-lg"
-                                onClick={() => {}}
-                            >
-                                <p className="text-slate-700 font-semibold text-sm">
-                                    kilépés
-                                </p>
-                            </button>
-                            <button
-                                className="transition duration-300 ease-in-out bg-teal-500/70 ml-2 text-xl h-5 w-17 px-3  hover:bg-teal-200/70 text-white rounded-3xl shadow-lg"
-                                onClick={() => {}}
-                            >
-                                <p className="text-slate-700 font-semibold text-sm">
-                                    jelszó változtatás
-                                </p>
-                            </button>
-
+                                <button
+                                    className="transition duration-300 ease-in-out bg-red-500/70 text-xl h-5 w-17 px-3  hover:bg-red-200/70 text-white rounded-3xl shadow-lg"
+                                    onClick={() => {}}
+                                >
+                                    <p className="text-slate-700 font-semibold text-sm">
+                                        kilépés
+                                    </p>
+                                </button>
+                                <button
+                                    className="transition duration-300 ease-in-out bg-teal-500/70 ml-2 text-xl h-5 w-17 px-3  hover:bg-teal-200/70 text-white rounded-3xl shadow-lg"
+                                    onClick={() => {}}
+                                >
+                                    <p className="text-slate-700 font-semibold text-sm">
+                                        jelszó változtatás
+                                    </p>
+                                </button>
                             </div>
                         </div>
                         <div className="text-base columns-1 desktop:columns-2 gap-2 pt-5">
@@ -53,6 +53,11 @@ const ProfilPage = ({ uploadShowButtonObj }) => {
                                         <div className="row-span-3">
                                             <img
                                                 src={element.kep}
+                                                alt={element.name}
+                                                className="w-1/2 h-1/2 rounded-full"
+                                            />
+                                            <img
+                                                src="./kezd.jpg"
                                                 alt={element.name}
                                                 className="w-1/2 h-1/2 rounded-full"
                                             />
