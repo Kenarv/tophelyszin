@@ -1,5 +1,4 @@
 import SearchShowButton from './searchShowButton';
-import WordboxAnimated from './wordboxAnimated';
 
 const StartPage = props => {
     return (
@@ -15,7 +14,7 @@ const StartPage = props => {
 
 
                     <div className="w-35 desktop:w-full">
-                        <h1 className="font-bold text-4xl my-10 ">
+                        <h1 className="font-bold text-2xl desktop:text-4xl my-10  ">
                             Segítség a jó helyszínválasztáshoz:
                         </h1>
                     </div>
