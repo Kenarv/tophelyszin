@@ -29,12 +29,18 @@ const FirstComp = ({
                 ) : (
                     <StartPage searchShowButtonObj={searchShowButtonObj} />
                 )
-            ) : showUpload ? <UploadForm uploadShowButtonObj={uploadShowButtonObj}/> :  showProfil ? 
-                (<ProfilPage uploadShowButtonObj={uploadShowButtonObj} />)
-                  
-             : (
-                showFullList && <FullList />
-            )}
+            ) : showUpload ? (
+                <UploadForm uploadShowButtonObj={uploadShowButtonObj} />
+            ) : showProfil ? (
+                <ProfilPage uploadShowButtonObj={uploadShowButtonObj} />
+            ) : showFullList ? (
+                <FullList />
+            ) : showSearch ? (
+                <SearchForm searchShowButtonObj={searchShowButtonObj} />
+            ) : (
+                <StartPage searchShowButtonObj={searchShowButtonObj} />
+            )
+            }
         </>
     );
 };
