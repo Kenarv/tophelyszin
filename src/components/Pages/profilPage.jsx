@@ -26,7 +26,7 @@ const ProfilPage = ({ uploadShowButtonObj }) => {
                                 return (
                                     <div
                                         key={element.id}
-                                        className="grid grid-rows-3 grid-flow-col gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/90 duration-300"
+                                        className="grid grid-rows-3 grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/90 duration-300"
                                     >
                                         <div className="row-span-3">
                                             <img
