@@ -5,7 +5,7 @@ import { venues } from '../../Lists/test_list';
 const ProfilPage = ({ uploadShowButtonObj }) => {
     return (
         <>
-            <div className="animate-form-animation flex flex-col gap-2 w-[360px] desktop:w-[1200px] mx-auto form-animation p-2 bg-sky-500/30 rounded-xl shadow-lg">
+            <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-sky-500/30 rounded-xl shadow-lg">
                 <div className="grid grid-rows-3 p-10">
                     <div className="w-2/5 h-[100px]">
                         <h1 className="text-3xl font-bold">Gipsz Jakab</h1>
