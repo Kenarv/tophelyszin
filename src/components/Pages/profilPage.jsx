@@ -8,7 +8,17 @@ const ProfilPage = ({ uploadShowButtonObj }) => {
             <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-sky-500/30 rounded-xl shadow-lg">
                 <div className=" p-10 grid-flow-row auto-rows-max">
                     <div className="w-2/5 mb-5">
-                        <h1 className="text-3xl font-bold">Gipsz Jakab</h1>
+                        <div className=" flex items-center">
+                            <h1 className="text-3xl font-bold">Gipsz Jakab</h1>
+                            <button
+                                className="transition duration-300 ease-in-out bg-red-500/70 text-xl h-5 w-17 px-3  hover:bg-red-200/70 text-white rounded-3xl shadow-lg"
+                                onClick={() => {}}
+                            >
+                                <p className="text-slate-700 font-semibold text-sm">
+                                    kilépés
+                                </p>
+                            </button>
+                        </div>
                         <div className="text-base columns-1 desktop:columns-2 gap-2 py-2">
                             <div className="flex items-center gap-2">
                                 <AiOutlineMail />
