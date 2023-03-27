@@ -15,7 +15,7 @@ const ProfilShowButton = props => {
                     : 'bg-red-300/30 hover:bg-red-400/50'
             } shadow-lg`}
 
-            onClick={() => {!showProfil ? handleClickLogged(false, true) : handleClickLogged(false, false)}}
+            onClick={() => {!showProfil ? handleClickLogged(true, false) : handleClickLogged(false, false)}}
             
         >
             <p className="text-slate-700 font-semibold text-lg">Profil</p>

@@ -68,10 +68,14 @@ function App() {
                 <FirstComp
                     showLogin={showLogin}
                     showReg={showReg}
+                    showFullList={showFullList}
+                    showProfil={showProfil}
                     searchShowButtonObj={searchShowButtonObj}
+                    uploadShowButtonObj={uploadShowButtonObj}
+
+                    logged={logged}
                 />
-                <ProfilPage uploadShowButtonObj={uploadShowButtonObj} />
-                 {showUpload && <UploadForm/>} 
+                 
             </MainComp>
         </div>
     );

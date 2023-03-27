@@ -16,7 +16,7 @@ const HeaderComp = props => {
                     className="align-center ml-5 mr-10 select-none w-50 h-20 "
                 />
 
-                {logged ? (
+                {!logged ? (
                     <div className=" flex flex-row gap-5">
                         <LoginShowButton
                             loginShowButtonObj={props.loginShowButtonObj}

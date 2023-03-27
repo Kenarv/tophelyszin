@@ -1,4 +1,6 @@
-const UploadForm = () => {
+import UploadShowButton from "../Pages/uploadShowbutton";
+
+const UploadForm = props => {
     return (
         <>
             <div className="animate-form-animation flex flex-col gap-2 w-[40rem]  mx-auto form-animation p-20 bg-sky-300/30 rounded-xl shadow-lg">
@@ -279,7 +281,11 @@ const UploadForm = () => {
                                 Feltöltés
                             </p>
                         </button>
+                        <UploadShowButton
+                            uploadShowButtonObj={props.uploadShowButtonObj}
+                        />
                     </div>
+                    
                 </form>
             </div>
         </>
