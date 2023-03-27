@@ -26,32 +26,35 @@ const ProfilPage = ({ uploadShowButtonObj }) => {
                                 return (
                                     <div
                                         key={element.id}
-                                        className="flex flex-col items-center justify-center bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/90 duration-300"
+                                        className="grid grid-rows-3 grid-flow-col gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/90 duration-300"
                                     >
-                                        <img
-                                            src={element.kep}
-                                            alt={element.name}
-                                            className="w-1/2 h-1/2 rounded-full"
-                                        />
-                                        <p className="text-2xl text-sky-700">
-                                            {element.name}
-                                        </p>
-                                        <p className="text-xl text-sky-600">
-                                            {element.megye}
-                                        </p>
-                                        <p className="text-xl text-sky-600">
-                                            {element.varos}
-                                        </p>
-                                        <p className="text-xl text-sky-600">
-                                            {element.utca}
-                                        </p>
-                                        <p className="text-xl text-sky-600">
-                                            {element.hazszam}
-                                        </p>
-                                        <p className="text-lg text-sky-500">
-                                            {element.state}
-                                        </p>
-                                        
+                                        <div className="row-span-3">
+                                            <img
+                                                src={element.kep}
+                                                alt={element.name}
+                                                className="w-1/2 h-1/2 rounded-full"
+                                            />
+                                        </div>
+
+                                        <div className="col-span-2">
+                                            <p className="text-3xl text-sky-700">
+                                                {element.name}
+                                            </p>
+                                        </div>
+                                        <div className="row-span-2 col-span-2">
+                                            <p className="text-2xl text-sky-700">
+                                                {element.megye}
+                                            </p>
+                                            <p className="text-xl text-sky-600">
+                                                {element.varos}
+                                            </p>
+                                            <p className="text-xl text-sky-600">
+                                                {element.utca}
+                                            </p>
+                                            <p className="text-xl text-sky-600">
+                                                {element.hazszam}
+                                            </p>
+                                        </div>
                                     </div>
                                 );
                             })}

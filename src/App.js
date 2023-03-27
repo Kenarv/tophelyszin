@@ -10,7 +10,28 @@ function App() {
     const [showReg, setShowReg] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
     const [showUpload, setShowUpload] = useState(false);
+    const [showProfil, setShowProfil] = useState(false);
+    const [showFullList, setShowFullList] = useState(false);
 
+
+    const [logged, setLogged] = useState(false);
+
+    const loggedButtonObj = {
+        logged,
+        setLogged,
+    };
+
+
+
+    const fullListShowButtonObj = {
+        showFullList,
+        setShowFullList,
+    };
+
+    const profilShowButtonObj = {
+        showProfil,
+        setShowProfil,
+    };
     
     const regShowButtonObj = {
         showReg,
@@ -38,6 +59,9 @@ function App() {
             <HeaderComp
                 loginShowButtonObj={loginShowButtonObj}
                 regShowButtonObj={regShowButtonObj}
+                profilShowButtonObj={profilShowButtonObj}
+                fullListShowButtonObj={fullListShowButtonObj}
+                loggedButtonObj={loggedButtonObj}
             />
             <MainComp>
                 {' '}

@@ -16,7 +16,7 @@ export const venues = [
         szallas:1,
         arkat:"szereny",
         megj:"Tópart",
-        kep:"src/media/test_img/01.png",
+        kep:"../../media/test_img/01.png"
         
     },
     {
