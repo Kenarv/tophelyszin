@@ -11,7 +11,7 @@ function App() {
     const [showUpload, setShowUpload] = useState(false);
     const [showProfil, setShowProfil] = useState(false);
     const [showFullList, setShowFullList] = useState(false);
-
+    const [showPwChange, setShowPwChange] = useState(false);
 
     const [logged, setLogged] = useState(false);
 
@@ -21,6 +21,10 @@ function App() {
     };
 
 
+    const pwChangeShowObj ={
+        showPwChange,
+        setShowPwChange,
+    }
 
     const fullListShowButtonObj = {
         showFullList,
@@ -71,6 +75,7 @@ function App() {
                     showProfil={showProfil}
                     searchShowButtonObj={searchShowButtonObj}
                     uploadShowButtonObj={uploadShowButtonObj}
+                    pwChangeShowObj={pwChangeShowObj}
 
                     logged={logged}
                 />

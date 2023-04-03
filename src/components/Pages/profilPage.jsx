@@ -2,7 +2,9 @@ import UploadShowButton from './uploadShowbutton';
 import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { venues } from '../../Lists/test_list';
 
-const ProfilPage = ({ uploadShowButtonObj }) => {
+const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj }) => {
+
+    const { setShowPwChange } = pwChangeShowObj;
     return (
         <>
             <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-sky-500/30 rounded-xl shadow-lg">
@@ -23,7 +25,7 @@ const ProfilPage = ({ uploadShowButtonObj }) => {
                                 </button>
                                 <button
                                     className="transition duration-300 ease-in-out bg-teal-500/70 ml-2 text-xl h-5 w-17 px-3  hover:bg-teal-200/70 text-white rounded-3xl shadow-lg"
-                                    onClick={() => {}}
+                                    onClick={() => {setShowPwChange(true)}}
                                 >
                                     <p className="text-slate-700 font-semibold text-sm">
                                         jelszó változtatás

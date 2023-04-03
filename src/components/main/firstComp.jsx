@@ -5,6 +5,7 @@ import SearchForm from '../forms/searchForm';
 import ProfilPage from '../Pages/profilPage';
 import FullList from '../Pages/fullList';
 import UploadForm from '../forms/uploadForm';
+import PwChangeFrom from '../forms/pwChangeForm';
 const FirstComp = ({
     logged,
     showFullList,
@@ -13,10 +14,11 @@ const FirstComp = ({
     showReg,
     searchShowButtonObj,
     uploadShowButtonObj,
+    pwChangeShowObj,
 }) => {
     const { showSearch } = searchShowButtonObj;
     const { showUpload } = uploadShowButtonObj;
-
+    const { showPwChange } = pwChangeShowObj;
     return (
         <>
             {!logged ? (
@@ -29,18 +31,23 @@ const FirstComp = ({
                 ) : (
                     <StartPage searchShowButtonObj={searchShowButtonObj} />
                 )
-            ) : showUpload ? (
-                <UploadForm uploadShowButtonObj={uploadShowButtonObj} />
+            ) :  showPwChange ? (
+                <PwChangeFrom pwChangeShowObj={pwChangeShowObj} 
+                /> 
             ) : showProfil ? (
-                <ProfilPage uploadShowButtonObj={uploadShowButtonObj} />
+                <ProfilPage
+                    uploadShowButtonObj={uploadShowButtonObj}
+                    pwChangeShowObj={pwChangeShowObj}
+                />
             ) : showFullList ? (
                 <FullList />
+            ) : showUpload ? (
+                <UploadForm uploadShowButtonObj={uploadShowButtonObj} />
             ) : showSearch ? (
                 <SearchForm searchShowButtonObj={searchShowButtonObj} />
             ) : (
                 <StartPage searchShowButtonObj={searchShowButtonObj} />
-            )
-            }
+            )}
         </>
     );
 };
