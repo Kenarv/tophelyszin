@@ -14,9 +14,9 @@ const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj }) => {
                             <h1 className="text-3xl font-bold mr-2">
                                 Gipsz Jakab
                             </h1>
-                            <div>
+                            <div className='flex items-center'>
                                 <button
-                                    className="transition duration-300 ease-in-out bg-red-500/70 text-xl h-5 w-17 px-3  hover:bg-red-200/70 text-white rounded-3xl shadow-lg"
+                                    className="transition duration-300 ease-in-out bg-red-500/70 text-xl h-10 desktop:h-5 w-17 px-3  hover:bg-red-200/70 text-white rounded-3xl shadow-lg"
                                     onClick={() => {}}
                                 >
                                     <p className="text-slate-700 font-semibold text-sm">
@@ -24,7 +24,7 @@ const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj }) => {
                                     </p>
                                 </button>
                                 <button
-                                    className="transition duration-300 ease-in-out bg-teal-500/70 ml-2 text-xl h-5 w-17 px-3  hover:bg-teal-200/70 text-white rounded-3xl shadow-lg"
+                                    className="transition duration-300 ease-in-out bg-teal-500/70 ml-2 text-xl h-10 desktop:h-5 w-17 px-3  hover:bg-teal-200/70 text-white rounded-3xl shadow-lg"
                                     onClick={() => {setShowPwChange(true)}}
                                 >
                                     <p className="text-slate-700 font-semibold text-sm">
@@ -50,33 +50,33 @@ const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj }) => {
                                 return (
                                     <div
                                         key={element.id}
-                                        className="grid grid-rows-3 grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/90 duration-300"
+                                        className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/90 duration-300"
                                     >
                                         <div className="row-span-3">
                                             <img
                                                 src={element.kep}
                                                 alt={element.name}
-                                                className="w-[200px] h-[200px] rounded-xl"
+                                                className="h-[100px] w-[100px] desktop:w-[200px] desktop:h-[200px] rounded-xl"
                                             />
                                             
                                         </div>
 
                                         <div className="col-span-2">
-                                            <p className="text-3xl text-sky-700">
+                                            <p className="text-2xl desktop:text-3xl text-sky-700">
                                                 {element.name}
                                             </p>
                                         </div>
                                         <div className="row-span-2 col-span-2">
-                                            <p className="text-2xl text-sky-700">
+                                            <p className="text-xl desktop:text-2xl text-sky-700">
                                                 {element.megye}
                                             </p>
-                                            <p className="text-xl text-sky-600">
+                                            <p className="text-lg desktop:text-xl text-sky-600">
                                                 {element.varos}
                                             </p>
-                                            <p className="text-xl text-sky-600">
+                                            <p className="text-lg desktop:text-xl text-sky-600">
                                                 {element.utca}
                                             </p>
-                                            <p className="text-xl text-sky-600">
+                                            <p className="text-lg desktop:text-xl text-sky-600">
                                                 {element.hazszam}
                                             </p>
                                         </div>
