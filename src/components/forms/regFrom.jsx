@@ -31,7 +31,7 @@ const RegForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        axios.post('backend.php', formData)
+        axios.post('https://localhost/tophelyszin/src/components/forms/backend.php', formData)
             .then((response) => {
                 if (response.data.status === 'success') {
                     setRegistered(true);
@@ -131,7 +131,7 @@ const RegForm = () => {
                     </label>
                     <input
                         className="border border-1"
-                        type="passwordRe"
+                        type="password"
                         id="passwordRe"
                         name="passwordRe"
                         value={formData.passwordRe}
