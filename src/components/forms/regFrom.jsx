@@ -11,6 +11,7 @@ const RegForm = () => {
                         type="text"
                         name="Vname"
                         placeholder=""
+                        required
                     />
                 </div>
                 <div className="flex flex-col">
@@ -22,6 +23,7 @@ const RegForm = () => {
                         type="text"
                         name="Kname"
                         placeholder=""
+                        required
                     />
                 </div>
                 <div className="flex flex-col">
@@ -33,6 +35,7 @@ const RegForm = () => {
                         type="text"
                         name="name"
                         placeholder=""
+                        required
                     />
                 </div>
                 <div className="flex flex-col">
@@ -44,6 +47,7 @@ const RegForm = () => {
                         type="password"
                         name="password"
                         placeholder=""
+                        required
                     />
                 </div>
                 <div className="flex flex-col">
@@ -55,6 +59,7 @@ const RegForm = () => {
                         type="password"
                         name="passwordAgain"
                         placeholder=""
+                        required
                     />
                 </div>
                 <div className="flex flex-col">
@@ -66,6 +71,7 @@ const RegForm = () => {
                         type="email"
                         name="eamil"
                         placeholder=""
+                        required
                     />
                 </div>
                 <div className="flex flex-col">
