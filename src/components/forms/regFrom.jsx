@@ -1,84 +1,74 @@
-import React, {useState} from 'react';
-import axios from 'axios';
-import {Redirect} from 'react';
-
-const RegForm = () => {
-    const [formData, setFormData] = useState({
-        vezNev: '',
-        kerNev: '',
-        username: '',
-        email: '',
-        password: '',
-        passwordRe: '',
-    });
-
-    const [formErrors, setFormErrors] = useState({
-        vezNev: '',
-        kerNev: '',
-        username: '',
-        email: '',
-        password: '',
-        passwordRe: '',
-    });
-
-    const [registered, setRegistered] = useState(false);
-
-    const handleChange = (event) => {
-        const {name, value} = event.target;
-        setFormData((prevData) => ({...prevData, [name]: value}));
-    };
+import React, { useState } from 'react';
+function RegForm() {
+    const [lastName, setLastName] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        axios.post('https://localhost/tophelyszin/src/components/forms/backend.php', formData)
-            .then((response) => {
-                if (response.data.status === 'success') {
-                    setRegistered(true);
+        fetch('/register.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                lastName,
+                firstName,
+                username,
+                email,
+                password,
+                confirmPassword
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Sikeres regisztráció!');
                 } else {
-                    setFormErrors(response.data.errors);
+                    setErrorMessage(data.message);
                 }
             })
-            .catch((error) => console.log(error));
+            .catch(error => {
+                console.error('Hiba történt a regisztráció során:', error);
+                setErrorMessage('Hiba történt a regisztráció során. Kérjük, próbálja meg később.');
+            });
     };
-
-    if (registered) {
-        return <Redirect to="loginForm.jsx"/>;
-    }
 
     return (
         <div
             className="animate-form-animation flex flex-col gap-2 w-[390px] md:w-[800px] mx-auto form-animation p-20 bg-sky-300/50 rounded-xl shadow-2xl">
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-col">
-                    <label className="font-bold" htmlFor="vezNev">
+                    <label className="font-bold" htmlFor="lastName">
                         Vezetéknév:
                     </label>
                     <input
                         className="border border-1"
                         type="text"
-                        id="vezeteknev"
-                        name="vezNev"
-                        value={formData.vezNev}
-                        onChange={handleChange}
+                        value={lastName}
+                        onChange={event => setLastName(event.target.value)}
+                        required
                         placeholder="Minta"
                     />
-                    <span>{formErrors.vezNev}</span>
+
                 </div>
                 <div className="flex flex-col">
-                    <label className="font-bold" htmlFor="kerNev">
+                    <label className="font-bold" htmlFor="FirstName">
                         Keresztnév:
                     </label>
                     <input
                         className="border border-1"
                         type="text"
-                        id="kerNev"
-                        name="kerNev"
-                        value={formData.kerNev}
-                        onChange={handleChange}
+                        value={firstName}
+                        onChange={event => setFirstName(event.target.value)}
+                        required
                         placeholder="Mihály"
                     />
-                    <span>{formErrors.kerNev}</span>
+
                 </div>
                 <div className="flex flex-col">
                     <label className="font-bold" htmlFor="username">
@@ -87,13 +77,12 @@ const RegForm = () => {
                     <input
                         className="border border-1"
                         type="text"
-                        id="username"
-                        name="username"
-                        value={formData.username}
-                        onChange={handleChange}
+                        value={username}
+                        onChange={event => setUsername(event.target.value)}
+                        required
                         placeholder="MintaUser"
                     />
-                    <span>{formErrors.username}</span>
+
                 </div>
                 <div className="flex flex-col">
                     <label className="font-bold" htmlFor="email">
@@ -102,10 +91,9 @@ const RegForm = () => {
                     <input
                         className="border border-1"
                         type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
+                        value={email}
+                        onChange={event => setEmail(event.target.value)}
+                        required
                         placeholder="mintamihaly@minta.hu"
                     />
                 </div>
@@ -115,37 +103,33 @@ const RegForm = () => {
                     </label>
                     <input
                         className="border border-1"
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
+                        value={password}
+                        onChange={event => setPassword(event.target.value)}
+                        required
                         placeholder=""
                     />
-                    <span>{formErrors.password}</span>
+
                 </div>
 
                 <div className="flex flex-col">
-                    <label className="font-bold" htmlFor="passwordRe">
+                    <label className="font-bold" htmlFor="confirmPassword">
                         Jelszó újra:
                     </label>
                     <input
                         className="border border-1"
-                        type="password"
-                        id="passwordRe"
-                        name="passwordRe"
-                        value={formData.passwordRe}
-                        onChange={handleChange}
+                        type="confirmPpassword"
+                        value={confirmPassword}
+                        onChange={event => setConfirmPassword(event.target.value)}
+                        required
                         placeholder=""
                     />
-                    <span>{formErrors.passwordRe}</span>
+
                 </div>
 
 
                 <div className="flex flex-row my-10">
-                    <button
+                    <button type="submit"
                             className="transition duration-300 ease-in-out text-xl w-35 px-5 py-1 text-white rounded-3xl bg-sky-400/30 hover:bg-sky-300/50 shadow-lg"
-                        onClick={handleSubmit} //innen megy majd a feltöltés az adatbázisba a bejelntkezési adatokkal valamint a továbblépés a profil oldalra a már meglévő adatokkal
 
                     >
                         <p className="text-slate-700 font-semibold text-base">
@@ -156,6 +140,6 @@ const RegForm = () => {
             </form>
         </div>
     );
-};
+}
 
 export default RegForm;
