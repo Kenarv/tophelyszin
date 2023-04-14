@@ -1,10 +1,13 @@
 import UploadShowButton from './uploadShowbutton';
 import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { venues } from '../../Lists/test_list';
+import { useState } from 'react';
 
 const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj }) => {
 
+    const [clicked , setClicked] = useState(false);
     const { setShowPwChange } = pwChangeShowObj;
+    console.log(clicked);
     return (
         <>
             <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-sky-500/30 rounded-xl shadow-lg">
@@ -45,12 +48,15 @@ const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj }) => {
                         </div>
                     </div>
                     <div className="border-solid border-sky-500 rounded-lg border-2">
-                        <div className="grid grid-cols-1 gap-5 p-5 w-full">
+                        <div className="grid grid-cols-1 gap-5 p-5 w-full" >
                             {venues.map(element => {
                                 return (
                                     <div
                                         key={element.id}
                                         className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/90 duration-300"
+                                        onClick={()=>!clicked ?setClicked(true):setClicked(false)
+                                        }
+                                        
                                     >
                                         <div className="row-span-3">
                                             <img
@@ -80,6 +86,12 @@ const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj }) => {
                                                 {element.hazszam}
                                             </p>
                                         </div>
+                                        {clicked && 
+                                        <div className="row-span-2 col-span-2">
+                                            <p className="text-lg desktop:text-xl text-sky-600">
+                                                Helyszín kapacitás: {element.kapacitas}
+                                            </p>
+                                        </div>}
                                         <div className="grid col-span-3 justify-items-end">
                                             <div>
                                                 <button
