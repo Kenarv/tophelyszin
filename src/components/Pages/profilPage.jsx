@@ -3,10 +3,11 @@ import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { venues } from '../../Lists/test_list';
 import { useState } from 'react';
 
-const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj }) => {
+const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj,loggedButtonObj }) => {
 
     const [clicked , setClicked] = useState(false);
     const { setShowPwChange } = pwChangeShowObj;
+    const { setLogged }=loggedButtonObj;
     console.log(clicked);
     return (
         <>
@@ -20,7 +21,7 @@ const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj }) => {
                             <div className='flex items-center'>
                                 <button
                                     className="transition duration-300 ease-in-out bg-red-500/70 text-xl h-10 desktop:h-5 w-17 px-3  hover:bg-red-200/70 text-white rounded-3xl shadow-lg"
-                                    onClick={() => {}}
+                                    onClick={() => {setLogged(false)}}
                                 >
                                     <p className="text-slate-700 font-semibold text-sm">
                                         kilépés

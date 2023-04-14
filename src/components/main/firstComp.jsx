@@ -7,7 +7,7 @@ import FullList from '../Pages/fullList';
 import UploadForm from '../forms/uploadForm';
 import PwChangeFrom from '../forms/pwChangeForm';
 const FirstComp = ({
-    logged,
+    loggedButtonObj,
     showFullList,
     showProfil,
     showLogin,
@@ -16,6 +16,7 @@ const FirstComp = ({
     uploadShowButtonObj,
     pwChangeShowObj,
 }) => {
+    const { logged } = loggedButtonObj;
     const { showSearch } = searchShowButtonObj;
     const { showUpload } = uploadShowButtonObj;
     const { showPwChange } = pwChangeShowObj;
@@ -38,6 +39,7 @@ const FirstComp = ({
                 <ProfilPage
                     uploadShowButtonObj={uploadShowButtonObj}
                     pwChangeShowObj={pwChangeShowObj}
+                    loggedButtonObj={loggedButtonObj}
                 />
             ) : showFullList ? (
                 <FullList />
