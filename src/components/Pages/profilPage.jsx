@@ -3,11 +3,14 @@ import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { venues } from '../../Lists/test_list';
 import { useState } from 'react';
 
-const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj,loggedButtonObj }) => {
-
-    const [clicked , setClicked] = useState(false);
+const ProfilPage = ({
+    uploadShowButtonObj,
+    pwChangeShowObj,
+    loggedButtonObj,
+}) => {
+    const [clicked, setClicked] = useState(false);
     const { setShowPwChange } = pwChangeShowObj;
-    const { setLogged }=loggedButtonObj;
+    const { setLogged } = loggedButtonObj;
     console.log(clicked);
     return (
         <>
@@ -18,10 +21,12 @@ const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj,loggedButtonObj }) => 
                             <h1 className="text-3xl font-bold mr-2">
                                 Gipsz Jakab
                             </h1>
-                            <div className='flex items-center'>
+                            <div className="flex items-center">
                                 <button
                                     className="transition duration-300 ease-in-out bg-red-500/70 text-xl h-10 desktop:h-5 w-17 px-3  hover:bg-red-200/70 text-white rounded-3xl shadow-lg"
-                                    onClick={() => {setLogged(false)}}
+                                    onClick={() => {
+                                        setLogged(false);
+                                    }}
                                 >
                                     <p className="text-slate-700 font-semibold text-sm">
                                         kilépés
@@ -29,7 +34,9 @@ const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj,loggedButtonObj }) => 
                                 </button>
                                 <button
                                     className="transition duration-300 ease-in-out bg-teal-500/70 ml-2 text-xl h-10 desktop:h-5 w-17 px-3  hover:bg-teal-200/70 text-white rounded-3xl shadow-lg"
-                                    onClick={() => {setShowPwChange(true)}}
+                                    onClick={() => {
+                                        setShowPwChange(true);
+                                    }}
                                 >
                                     <p className="text-slate-700 font-semibold text-sm">
                                         jelszó változtatás
@@ -49,15 +56,17 @@ const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj,loggedButtonObj }) => 
                         </div>
                     </div>
                     <div className="border-solid border-sky-500 rounded-lg border-2">
-                        <div className="grid grid-cols-1 gap-5 p-5 w-full" >
+                        <div className="grid grid-cols-1 gap-5 p-5 w-full">
                             {venues.map(element => {
                                 return (
                                     <div
                                         key={element.id}
                                         className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/30 duration-300"
-                                        onClick={()=>!clicked ?setClicked(true):setClicked(false)
+                                        onClick={() =>
+                                            !clicked
+                                                ? setClicked(true)
+                                                : setClicked(false)
                                         }
-                                        
                                     >
                                         <div className="row-span-3">
                                             <img
@@ -65,7 +74,6 @@ const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj,loggedButtonObj }) => 
                                                 alt={element.name}
                                                 className="h-[100px] w-[100px] desktop:w-[200px] desktop:h-[200px] rounded-xl"
                                             />
-                                            
                                         </div>
 
                                         <div className="col-span-2">
@@ -87,12 +95,54 @@ const ProfilPage = ({ uploadShowButtonObj,pwChangeShowObj,loggedButtonObj }) => 
                                                 {element.hazszam}
                                             </p>
                                         </div>
-                                        {clicked && 
-                                        <div className="row-span-2 col-span-3">
-                                            <p className="text-lg desktop:text-xl text-sky-600">
-                                                Helyszín kapacitás: {element.kapacitas}
-                                            </p>
-                                        </div>}
+                                        {clicked && (
+                                            <div className="row-span-2 col-span-3">
+                                                <p className="text-lg desktop:text-xl text-sky-800">
+                                                    Helyszín kapacitás:{' '}
+                                                    {element.kapacitas}
+                                                </p>
+                                                <p className="text-lg desktop:text-xl text-sky-800">
+                                                    Catering:{' '}
+                                                    {element.etel === 1
+                                                        ? 'igen'
+                                                        : 'nem'}
+                                                </p>
+                                                <p className="text-lg desktop:text-xl text-sky-800">
+                                                    Bár:{' '}
+                                                    {element.bar === 1
+                                                        ? 'igen'
+                                                        : 'nem'}
+                                                </p>
+                                                <p className="text-lg desktop:text-xl text-sky-800">
+                                                    Klimatizált:{' '}
+                                                    {element.klima === 1
+                                                        ? 'igen'
+                                                        : 'nem'}
+                                                </p>
+                                                <p className="text-lg desktop:text-xl text-sky-800">
+                                                    Tánctér kapacitás:{' '}
+                                                    {element.tancter} &#13217;
+                                                </p>
+                                                <p className="text-lg desktop:text-xl text-sky-800">
+                                                    Parkoló:{' '}
+                                                    {element.parkolo === 1
+                                                        ? 'igen'
+                                                        : 'nem'}
+                                                </p>
+                                                <p className="text-lg desktop:text-xl text-sky-800">
+                                                    Szállás helyszínen:{' '}
+                                                    {element.szallas === 1
+                                                        ? 'igen'
+                                                        : 'nem'}
+                                                </p>
+                                                <p className="text-lg desktop:text-xl text-sky-800">
+                                                    Árkategória: {element.arkat}
+                                                </p>
+                                                <p className="text-lg desktop:text-xl text-sky-800">
+                                                    Megjegyzés: {element.megj}
+                                                </p>
+                                            </div>
+                                        )}
                                         <div className="grid col-span-3 justify-items-end">
                                             <div>
                                                 <button
