@@ -12,6 +12,9 @@ const ProfilPage = ({
     const { setShowPwChange } = pwChangeShowObj;
     const { setLogged } = loggedButtonObj;
     console.log(clicked);
+
+
+    
     return (
         <>
             <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-sky-500/30 rounded-xl shadow-lg">
@@ -58,6 +61,7 @@ const ProfilPage = ({
                     <div className="border-solid border-sky-500 rounded-lg border-2">
                         <div className="grid grid-cols-1 gap-5 p-5 w-full">
                             {venues.map(element => {
+                                const nameLength = String(element.name).length;
                                 return (
                                     <div
                                         key={element.id}
@@ -77,7 +81,7 @@ const ProfilPage = ({
                                         </div>
 
                                         <div className="col-span-2">
-                                            <p className="text-2xl desktop:text-3xl text-sky-700">
+                                            <p className={`${nameLength > 20 ? "text-lg":"text-2xl"} desktop:text-3xl text-sky-700`}>
                                                 {element.name}
                                             </p>
                                         </div>
