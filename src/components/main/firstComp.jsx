@@ -32,9 +32,10 @@ const FirstComp = ({
                 ) : (
                     <StartPage searchShowButtonObj={searchShowButtonObj} />
                 )
-            ) :  showPwChange ? (
-                <PwChangeFrom pwChangeShowObj={pwChangeShowObj} 
-                /> 
+            ) : showPwChange ? (
+                <PwChangeFrom pwChangeShowObj={pwChangeShowObj} />
+            ) : showUpload ? (
+                <UploadForm uploadShowButtonObj={uploadShowButtonObj} />
             ) : showProfil ? (
                 <ProfilPage
                     uploadShowButtonObj={uploadShowButtonObj}
@@ -43,8 +44,6 @@ const FirstComp = ({
                 />
             ) : showFullList ? (
                 <FullList />
-            ) : showUpload ? (
-                <UploadForm uploadShowButtonObj={uploadShowButtonObj} />
             ) : showSearch ? (
                 <SearchForm searchShowButtonObj={searchShowButtonObj} />
             ) : (
