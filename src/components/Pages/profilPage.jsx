@@ -65,7 +65,7 @@ const ProfilPage = ({
                                 return (
                                     <div
                                         key={element.id}
-                                        className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/30 duration-300"
+                                        className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/20 duration-300"
                                         onClick={() =>
                                             !clicked
                                                 ? setClicked(true)
@@ -89,13 +89,13 @@ const ProfilPage = ({
                                             <p className="text-xl desktop:text-2xl text-sky-700">
                                                 {element.megye}
                                             </p>
-                                            <p className="text-lg desktop:text-xl text-sky-600">
+                                            <p className="text-lg desktop:text-xl text-sky-700">
                                                 {element.varos}
                                             </p>
-                                            <p className="text-lg desktop:text-xl text-sky-600">
+                                            <p className="text-lg desktop:text-xl text-sky-700">
                                                 {element.utca}
                                             </p>
-                                            <p className="text-lg desktop:text-xl text-sky-600">
+                                            <p className="text-lg desktop:text-xl text-sky-700">
                                                 {element.hazszam}
                                             </p>
                                         </div>
