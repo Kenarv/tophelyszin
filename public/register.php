@@ -1,12 +1,12 @@
 <?php
-
+    include "dbconn.php";
     session_start();
 
     // Adatbázis beállítások
-    $db_host = "localhost";
-    $db_username = "c41703root";
-    $db_password = "tophelyszin";
-    $database = "c41703tophelyszin";
+    //$db_host = "localhost";
+    //$db_username = "c41703root";
+    //$db_password = "tophelyszin";
+    //$database = "c41703tophelyszin";
 
     // Kapcsolódás az adatbázishoz
     $conn = mysqli_connect($db_host, $db_username, $db_password, $database);
