@@ -53,7 +53,7 @@
             }
 
             if ($row['email'] === $email) {
-                echo "Az email címmel már regisztráltak!";
+                echo "Ezzel az email címmel már regisztráltak!";
                 exit();
             }
         }
@@ -64,7 +64,8 @@
         // Adatok mentése az adatbázisba
         $sql = "INSERT INTO felhasznalo (vezNev, kerNev, username, email, password) VALUES ('$lastName', '$firstName', '$username', '$email', '$hashed_password')";
         if (mysqli_query($conn, $sql)) {
-            echo "Az adatokat sikeresen tároltuk az adatbázisban!";
+
+            echo "Az adatokat sikeresen tároltuk";
         } else {
             echo "Hiba történt a tárolás közben: " . mysqli_error($conn);
         }

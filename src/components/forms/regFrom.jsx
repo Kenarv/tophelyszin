@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 function RegForm() {
     const [lastName, setLastName] = useState('');
     const [firstName, setFirstName] = useState('');
@@ -12,9 +13,6 @@ function RegForm() {
         event.preventDefault();
         fetch('/register.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
             body: JSON.stringify({
                 lastName,
                 firstName,
@@ -24,13 +22,21 @@ function RegForm() {
                 confirmPassword
             })
         })
-            .then(response => response.json())
+            .then(response => response.text())
             .then(data => {
-                if (data.success) {
+                if (data === "Az adatokat sikeresen tároltuk") {
                     alert('Sikeres regisztráció!');
-                } else {
-                    setErrorMessage(data.message);
                 }
+                if (data === "Ezzel az email címmel már regisztráltak!") {
+                    alert('Ezzel az email címmel már regisztráltak!');
+                }
+                if (data === "A jelszavak nem egyeznek meg!") {
+                    alert('A jelszavak nem egyeznek meg!');
+                }
+                if (data === "A felhasználónév már foglalt!") {
+                    alert('A felhasználónév már foglalt!');
+                }
+
             })
             .catch(error => {
                 console.error('Hiba történt a regisztráció során:', error);

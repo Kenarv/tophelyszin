@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+//import {Navigate, useNavigate} from "react-router-dom";
+
 
 function LoginForm() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
+    //const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -13,13 +16,19 @@ function LoginForm() {
             body: JSON.stringify(data),
             headers: { "Content-Type": "application/json" },
         })
-            .then((response) => response.json())
+            .then((response) => response.text())
             .then((data) => {
-                if (data.success) {
-                    setMessage("Sikeres bejelentkezés!");
-                } else {
-                    setMessage(data.message);
+                if (data === "Nincs ilyen felhasználó!") {
+                    alert("Nincs ilyen felhasználó!");
                 }
+                if (data === "Sikeres belépés!") {
+                    alert("Sikeres belépés!");
+                    //navigate("/profilPage");
+                }
+                if (data === "Hibás jelszó!") {
+                    alert("Hibás jelszó!");
+                }
+
             })
             .catch((error) => {
                 setMessage("Hiba történt a bejelentkezés során.");
@@ -36,6 +45,7 @@ function LoginForm() {
                     <input
                         type="text"
                         id="username"
+                        required
                         value={username}
                         onChange={(event) => setUsername(event.target.value)}
                         placeholder=""
@@ -49,6 +59,7 @@ function LoginForm() {
                         className="border border-1"
                         type="password"
                         id="password"
+                        required
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
                     />
