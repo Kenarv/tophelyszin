@@ -2,10 +2,11 @@ import React, { useState } from "react";
 //import {Navigate, useNavigate} from "react-router-dom";
 
 
-function LoginForm() {
+function LoginForm({loggedButtonObj}) { //itt hookoltam be a loggedButtonObj-et
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
+    const { setLogged } = loggedButtonObj;      //ide dekonsturktoltam a loggedButtonObj-ből a setLogged settert
     //const navigate = useNavigate();
 
     const handleSubmit = (event) => {
@@ -23,6 +24,7 @@ function LoginForm() {
                 }
                 if (data === "Sikeres belépés!") {
                     alert("Sikeres belépés!");
+                    setLogged(true);        //itt megadja neki hogy sikeres belépés esetén a logged legyen true
                     //navigate("/profilPage");
                 }
                 if (data === "Hibás jelszó!") {

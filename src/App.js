@@ -76,8 +76,7 @@ function App() {
                     searchShowButtonObj={searchShowButtonObj}
                     uploadShowButtonObj={uploadShowButtonObj}
                     pwChangeShowObj={pwChangeShowObj}
-
-                    logged={logged}
+                    loggedButtonObj={loggedButtonObj}
                 />
                  
             </MainComp>

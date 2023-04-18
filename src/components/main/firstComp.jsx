@@ -7,7 +7,7 @@ import FullList from '../Pages/fullList';
 import UploadForm from '../forms/uploadForm';
 import PwChangeFrom from '../forms/pwChangeForm';
 const FirstComp = ({
-    logged,
+    loggedButtonObj,
     showFullList,
     showProfil,
     showLogin,
@@ -16,6 +16,7 @@ const FirstComp = ({
     uploadShowButtonObj,
     pwChangeShowObj,
 }) => {
+    const { logged } = loggedButtonObj;
     const { showSearch } = searchShowButtonObj;
     const { showUpload } = uploadShowButtonObj;
     const { showPwChange } = pwChangeShowObj;
@@ -23,7 +24,10 @@ const FirstComp = ({
         <>
             {!logged ? (
                 showLogin ? (
-                    <LoginForm showLogin={showLogin} />
+                    <LoginForm
+                        showLogin={showLogin}
+                        loggedButtonObj={loggedButtonObj}       //itt megy propnak a loggedButtonObj hogy használni tudja a login form
+                    />
                 ) : showReg ? (
                     <RegForm showReg={showReg} />
                 ) : showSearch ? (
@@ -31,9 +35,8 @@ const FirstComp = ({
                 ) : (
                     <StartPage searchShowButtonObj={searchShowButtonObj} />
                 )
-            ) :  showPwChange ? (
-                <PwChangeFrom pwChangeShowObj={pwChangeShowObj} 
-                /> 
+            ) : showPwChange ? (
+                <PwChangeFrom pwChangeShowObj={pwChangeShowObj} />
             ) : showProfil ? (
                 <ProfilPage
                     uploadShowButtonObj={uploadShowButtonObj}
