@@ -6,7 +6,10 @@ import ProfilPage from '../Pages/profilPage';
 import FullList from '../Pages/fullList';
 import UploadForm from '../forms/uploadForm';
 import PwChangeFrom from '../forms/pwChangeForm';
+import ResultList from '../Pages/resultList';
+
 const FirstComp = ({
+    resultShowButtonObj,
     loggedButtonObj,
     showFullList,
     showProfil,
@@ -20,6 +23,7 @@ const FirstComp = ({
     const { showSearch } = searchShowButtonObj;
     const { showUpload } = uploadShowButtonObj;
     const { showPwChange } = pwChangeShowObj;
+    const { showResult } = resultShowButtonObj;
     return (
         <>
             {!logged ? (
@@ -27,8 +31,13 @@ const FirstComp = ({
                     <LoginForm showLogin={showLogin} />
                 ) : showReg ? (
                     <RegForm showReg={showReg} />
+                ) : showResult ? (
+                    <ResultList resultShowButtonObj={resultShowButtonObj} />
                 ) : showSearch ? (
-                    <SearchForm searchShowButtonObj={searchShowButtonObj} />
+                    <SearchForm
+                        searchShowButtonObj={searchShowButtonObj}
+                        resultShowButtonObj={resultShowButtonObj}
+                    />
                 ) : (
                     <StartPage searchShowButtonObj={searchShowButtonObj} />
                 )

@@ -12,14 +12,20 @@ function App() {
     const [showProfil, setShowProfil] = useState(false);
     const [showFullList, setShowFullList] = useState(false);
     const [showPwChange, setShowPwChange] = useState(false);
+    const [showResult, setShowResult] = useState(false);
 
     const [logged, setLogged] = useState(false);
+    
+
+    const resultShowButtonObj = {
+        showResult,
+        setShowResult,
+    }
 
     const loggedButtonObj = {
         logged,
         setLogged,
     };
-
 
     const pwChangeShowObj ={
         showPwChange,
@@ -77,6 +83,7 @@ function App() {
                     uploadShowButtonObj={uploadShowButtonObj}
                     pwChangeShowObj={pwChangeShowObj}
                     loggedButtonObj={loggedButtonObj}
+                    resultShowButtonObj={resultShowButtonObj}
         
                 />
                  

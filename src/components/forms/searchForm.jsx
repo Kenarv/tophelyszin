@@ -1,3 +1,4 @@
+import ResultShowButton from '../Pages/resultShowButton';
 import SearchShowButton from '../Pages/searchShowButton';
 
 const SearchForm = props => {
@@ -52,7 +53,6 @@ const SearchForm = props => {
                             name="Kapacitas"
                             id="KapacitasID"
                             className="my-3"
-                           
                         >
                             <option value="20-60 fő">20-60 fő</option>
                             <option value="60-150 fő">60-150 fő</option>
@@ -79,7 +79,6 @@ const SearchForm = props => {
                                 value="0"
                             />
                             <label>Nem</label>
-                            
                         </div>
                     </div>
                     <div className="flex flex-col">
@@ -199,14 +198,17 @@ const SearchForm = props => {
                     </div>
 
                     <div className="flex flex-row gap-20">
-                        <button
+                        <ResultShowButton
+                            resultShowButtonObj={props.resultShowButtonObj}
+                        />
+                        {/*<button
                             className="transition duration-300 ease-in-out text-xl w-35 px-5 py-1 text-white rounded-3xl bg-sky-400/30 hover:bg-sky-300/50 shadow-lg py-3"
                             onClick={() => ''} //Ez indítja el a kilistázó lekérdezést
                         >
                             <p className="text-slate-700 font-semibold text-base">
                                 Keresés
                             </p>
-                        </button>
+                        </button> */}
                     </div>
                 </form>
                 <div className="py-5">
