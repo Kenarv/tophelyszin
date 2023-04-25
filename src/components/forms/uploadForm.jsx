@@ -103,17 +103,14 @@ const UploadForm = props => {
                     </div>
                     <div className="grid grid-cols-1">
                         <label className="font-bold py-2" htmlFor="Kapacitas">
-                            Mekkora a kapacitás:
+                            Mekkora a kapacitás(fő):
                         </label>
-                        <select
+                        <input
+                            type="text"
+                            className=" h-8  border-2 border-sky-200 rounded-lg py-1 focus:outline-none focus:border-sky-700"
                             name="Kapacitas"
                             id="KapacitasID"
-                            className="my-3"
-                        >
-                            <option value="20-60 fő">20-60 fő</option>
-                            <option value="60-150 fő">60-150 fő</option>
-                            <option value="150+ fő">150+ fő</option>
-                        </select>
+                        />              
                     </div>
                     <div className="grid grid-cols-1">
                         <p className="font-bold py-2">
@@ -181,19 +178,14 @@ const UploadForm = props => {
                     </div>
                     <div className="grid grid-cols-1">
                         <label className="font-bold py-2" htmlFor="Tancter">
-                            Mekkora a tánctér:
+                            Mekkora a tánctér(&#13217;):
                         </label>
-                        <select name="Tancter" id="TancterID" className="my-3">
-                            <option value="kis tánctér(30-40 &#13217;)">
-                                kis tánctér(30-40 &#13217;)
-                            </option>
-                            <option value="közepes tánctér(50-70 &#13217;)">
-                                közepes tánctér(50-70 &#13217;)
-                            </option>
-                            <option value="csarnok(80+ &#13217;)">
-                                csarnok(80+ &#13217;)
-                            </option>
-                        </select>
+                        <input
+                            type="text"
+                            className=" h-8  border-2 border-sky-200 rounded-lg py-1 focus:outline-none focus:border-sky-700"
+                            name="Tancter"
+                            id="TancterID"
+                        />                      
                     </div>
                     <div className="grid grid-cols-1">
                         <p className="font-bold py-2">
@@ -247,9 +239,9 @@ const UploadForm = props => {
                             id="ArkategoriaID"
                             className="my-3"
                         >
-                            <option value="Szerény">Szerény</option>
-                            <option value="Átlagos">Átlagos</option>
-                            <option value="Premium">Premium</option>
+                            <option value="szereny">Szerény</option>
+                            <option value="atlagos">Átlagos</option>
+                            <option value="premium">Premium</option>
                         </select>
                     </div>
                     <div className="grid grid-cols-1">

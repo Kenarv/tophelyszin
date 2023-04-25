@@ -8,13 +8,12 @@ const ProfilPage = ({
     pwChangeShowObj,
     loggedButtonObj,
 }) => {
+    const [clickedID, setClickedID] = useState();
     const [clicked, setClicked] = useState(false);
     const { setShowPwChange } = pwChangeShowObj;
     const { setLogged } = loggedButtonObj;
     console.log(clicked);
 
-
-    
     return (
         <>
             <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-sky-500/30 rounded-xl shadow-lg">
@@ -62,14 +61,20 @@ const ProfilPage = ({
                         <div className="grid grid-cols-1 gap-5 p-5 w-full">
                             {venues.map(element => {
                                 const nameLength = String(element.name).length;
+
+                                console.log(clickedID);
+                                console.log(clicked);
+
                                 return (
                                     <div
                                         key={element.id}
                                         className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/20 duration-300"
                                         onClick={() =>
-                                            !clicked
-                                                ? setClicked(true)
-                                                : setClicked(false)
+                                            (!clicked
+                                            ? setClicked(true)
+                                            : setClicked(false) 
+                                            )  &&
+                                            setClickedID(element.id.valueOf)
                                         }
                                     >
                                         <div className="row-span-3">
@@ -81,7 +86,13 @@ const ProfilPage = ({
                                         </div>
 
                                         <div className="col-span-2">
-                                            <p className={`${nameLength > 20 ? "text-lg":"text-2xl"} desktop:text-3xl text-sky-700`}>
+                                            <p
+                                                className={`${
+                                                    nameLength > 20
+                                                        ? 'text-lg'
+                                                        : 'text-2xl'
+                                                } desktop:text-3xl text-sky-700`}
+                                            >
                                                 {element.name}
                                             </p>
                                         </div>
@@ -99,7 +110,7 @@ const ProfilPage = ({
                                                 {element.hazszam}
                                             </p>
                                         </div>
-                                        {clicked && (
+                                        {clicked && clickedID && (
                                             <div className="row-span-2 col-span-3">
                                                 <p className="text-lg desktop:text-xl text-sky-800">
                                                     Helyszín kapacitás:{' '}
