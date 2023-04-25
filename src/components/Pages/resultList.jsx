@@ -100,6 +100,9 @@ const ResultList = ({filterObj,resultShowButtonObj,}) => {
                                                 <p className="text-lg desktop:text-xl text-sky-800">
                                                     Megjegyzés: {element.megj}
                                                 </p>
+                                                <p className="text-lg desktop:text-xl text-sky-800">
+                                                    email: {element.email}
+                                                </p>
                                             </div>
                                         )}
                                         <div className="grid col-span-3 justify-items-end">
