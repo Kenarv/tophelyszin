@@ -14,8 +14,19 @@ function App() {
     const [showPwChange, setShowPwChange] = useState(false);
     const [showResult, setShowResult] = useState(false);
 
+    const [formData, setFormData] = useState({});
+    const [filteredData, setFilteredData] = useState([]);
+
     const [logged, setLogged] = useState(false);
     
+
+
+    const filterObj = {
+        formData,
+        setFormData,
+        filteredData,
+        setFilteredData,
+    }
 
     const resultShowButtonObj = {
         showResult,
@@ -84,7 +95,7 @@ function App() {
                     pwChangeShowObj={pwChangeShowObj}
                     loggedButtonObj={loggedButtonObj}
                     resultShowButtonObj={resultShowButtonObj}
-        
+                    filterObj={filterObj}
                 />
                  
             </MainComp>

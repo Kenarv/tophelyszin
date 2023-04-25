@@ -1,9 +1,9 @@
 
 
 
-const SearchShowButton = props => {
+const SearchShowButton = ({searchShowButtonObj}) => {
 
-    const {showSearch, setShowSearch} = props.searchShowButtonObj;
+    const {showSearch, setShowSearch} = searchShowButtonObj;
 
     return(
         <button

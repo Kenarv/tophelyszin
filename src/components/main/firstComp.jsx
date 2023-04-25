@@ -9,6 +9,7 @@ import PwChangeFrom from '../forms/pwChangeForm';
 import ResultList from '../Pages/resultList';
 
 const FirstComp = ({
+    filterObj,
     resultShowButtonObj,
     loggedButtonObj,
     showFullList,
@@ -32,11 +33,15 @@ const FirstComp = ({
                 ) : showReg ? (
                     <RegForm showReg={showReg} />
                 ) : showResult ? (
-                    <ResultList resultShowButtonObj={resultShowButtonObj} />
+                    <ResultList
+                        resultShowButtonObj={resultShowButtonObj}
+                        filterObj={filterObj}
+                    />
                 ) : showSearch ? (
                     <SearchForm
                         searchShowButtonObj={searchShowButtonObj}
                         resultShowButtonObj={resultShowButtonObj}
+                        filterObj={filterObj}
                     />
                 ) : (
                     <StartPage searchShowButtonObj={searchShowButtonObj} />

@@ -1,16 +1,58 @@
 import ResultShowButton from '../Pages/resultShowButton';
 import SearchShowButton from '../Pages/searchShowButton';
+import { venues } from '../../Lists/test_list';
 
-const SearchForm = props => {
+const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
+
+    const {showSearch,setShowSearch} = searchShowButtonObj;
+    const {showResult,setShowResult} = resultShowButtonObj;
+    const {formData,setFormData,filteredData,setFilteredData} = filterObj;
+
+    function handleChange(event) {
+
+        const { name, value } = event.target;
+
+        setFormData((prevState) => ({
+          ...prevState,
+          [name]: value
+        }));
+      }
+
+      function handleSubmit(event) {
+        event.preventDefault();
+        const filtered = venues.filter((item) => {
+          return (
+            (formData.MegyeNev ? item.megye === formData.MegyeNev : true) &&
+            (formData.Kapacitas ? item.kapacitas === formData.Kapacitas : true) &&
+            (formData.Etel ? item.etel === formData.Etel : true) &&
+            (formData.Ital ? item.bar === formData.Ital : true) &&
+            (formData.Klima ? item.klima === formData.Klima : true) &&
+            (formData.Tancter ? item.tancter === formData.Tancter : true) &&
+            (formData.Parkolo ? item.parkolo === formData.Parkolo : true) &&
+            (formData.Szallas ? item.szallas === formData.Szallas : true) 
+          );
+        });
+
+        setFilteredData(filtered);
+        console.log(filteredData);
+      }
+
+
+
+
+
+
+
+
     return (
         <>
             <div className="animate-form-animation flex flex-col gap-2 w-[390px] md:w-[800px] mx-auto form-animation p-20 bg-sky-300/50 rounded-xl shadow-2xl">
-                <form action="">
+                <form action="" onSubmit={handleSubmit}>
                     <div className="flex flex-col">
                         <label className="font-bold py-2" htmlFor="MegyeNev">
                             Válassza ki a kivánt megyét:
                         </label>
-                        <select name="MegyeNev" id="MegyeNev" className="my-3">
+                        <select name="MegyeNev" id="MegyeNev" className="my-3" onChange={handleChange}>
                             <option value="Bács-Kiskun">Bács-Kiskun</option>
                             <option value="Baranya">Baranya</option>
                             <option value="Békés">Békés</option>
@@ -53,6 +95,7 @@ const SearchForm = props => {
                             name="Kapacitas"
                             id="KapacitasID"
                             className="my-3"
+                            onChange={handleChange}
                         >
                             <option value="20-60 fő">20-60 fő</option>
                             <option value="60-150 fő">60-150 fő</option>
@@ -69,6 +112,7 @@ const SearchForm = props => {
                                 id="EtelVanID"
                                 name="Etel"
                                 value="1"
+                                onChange={handleChange}
                             />
                             <label>Igen</label>
 
@@ -91,6 +135,7 @@ const SearchForm = props => {
                                 id="ItalVanID"
                                 name="Ital"
                                 value="1"
+                                onChange={handleChange}
                             />
                             <label>Igen</label>
 
@@ -111,6 +156,7 @@ const SearchForm = props => {
                                 id="KlimaVanID"
                                 name="Klima"
                                 value="1"
+                                onChange={handleChange}
                             />
                             <label>Igen</label>
 
@@ -127,14 +173,14 @@ const SearchForm = props => {
                         <label className="font-bold py-2" htmlFor="Tancter">
                             Mekkora legyen a tánctér:
                         </label>
-                        <select name="Tancter" id="TancterID" className="my-3">
-                            <option value="kis tánctér(30-40 &#13217;)">
+                        <select name="Tancter" id="TancterID" className="my-3" onChange={handleChange}>
+                            <option value="40">
                                 kis tánctér(30-40 &#13217;)
                             </option>
-                            <option value="közepes tánctér(50-70 &#13217;)">
+                            <option value="50">
                                 közepes tánctér(50-70 &#13217;)
                             </option>
-                            <option value="csarnok(80+ &#13217;)">
+                            <option value="80">
                                 csarnok(80+ &#13217;)
                             </option>
                         </select>
@@ -149,6 +195,7 @@ const SearchForm = props => {
                                 id="ParkoloVanID"
                                 name="Parkolo"
                                 value="1"
+                                onChange={handleChange}
                             />
                             <label>Igen</label>
                             <input
@@ -170,6 +217,7 @@ const SearchForm = props => {
                                 id="SzallasVanID"
                                 name="Szallas"
                                 value="1"
+                                onChange={handleChange}
                             />
                             <label>Igen</label>
 
@@ -190,6 +238,7 @@ const SearchForm = props => {
                             name="Arkategoria"
                             id="ArkategoriaID"
                             className="my-3"
+                            onChange={handleChange}
                         >
                             <option value="Szerény">Szerény</option>
                             <option value="Átlagos">Átlagos</option>
@@ -199,7 +248,7 @@ const SearchForm = props => {
 
                     <div className="flex flex-row gap-20">
                         <ResultShowButton
-                            resultShowButtonObj={props.resultShowButtonObj}
+                            resultShowButtonObj={resultShowButtonObj}
                         />
                         {/*<button
                             className="transition duration-300 ease-in-out text-xl w-35 px-5 py-1 text-white rounded-3xl bg-sky-400/30 hover:bg-sky-300/50 shadow-lg py-3"
@@ -213,7 +262,7 @@ const SearchForm = props => {
                 </form>
                 <div className="py-5">
                     <SearchShowButton
-                        searchShowButtonObj={props.searchShowButtonObj}
+                        searchShowButtonObj={searchShowButtonObj}
                     />
                 </div>
             </div>

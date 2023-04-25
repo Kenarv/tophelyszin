@@ -1,9 +1,9 @@
 
 
 
-const ResultShowButton = props => {
+const ResultShowButton = ({resultShowButtonObj}) => {
 
-    const {showResult, setShowResult} = props.resultShowButtonObj;
+    const {showResult, setShowResult} = resultShowButtonObj;
 
     return(
         <button
