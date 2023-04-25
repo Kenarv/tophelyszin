@@ -63,6 +63,18 @@ const UploadForm = props => {
                     </div>
                     <br />
                     <div className="grid grid-cols-1">
+                    <label className="font-bold" htmlFor="password">
+                        Email:
+                    </label>
+                    <input
+                        className="h-8  border-2 border-sky-200 rounded-lg py-1 focus:outline-none focus:border-sky-700"
+                        type="email"
+                        name="helyszinEamil"
+                        placeholder=""
+                        required
+                    />
+                </div>
+                    <div className="grid grid-cols-1">
                         <label className="font-bold py-2" htmlFor="MegyeNev">
                             Válassza ki a megyét:
                         </label>

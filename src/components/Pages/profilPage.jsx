@@ -14,6 +14,9 @@ const ProfilPage = ({
     const { setLogged } = loggedButtonObj;
     console.log(clicked);
 
+
+
+
     return (
         <>
             <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-sky-500/30 rounded-xl shadow-lg">
@@ -69,11 +72,12 @@ const ProfilPage = ({
                                     <div
                                         key={element.id}
                                         className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/20 duration-300"
-                                        onClick={() =>
+                                        onClick={() => 
                                             !clicked
                                             ? setClicked(true)
                                             : setClicked(false) 
-                                            
+
+                                            //console.log(element.id)
                                         }
                                     >
                                         <div className="row-span-3">
