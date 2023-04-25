@@ -70,11 +70,10 @@ const ProfilPage = ({
                                         key={element.id}
                                         className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/20 duration-300"
                                         onClick={() =>
-                                            (!clicked
+                                            !clicked
                                             ? setClicked(true)
                                             : setClicked(false) 
-                                            )  &&
-                                            setClickedID(element.id.valueOf)
+                                            
                                         }
                                     >
                                         <div className="row-span-3">
