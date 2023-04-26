@@ -2,6 +2,7 @@ import HeaderComp from './components/header/headerComp';
 import MainComp from './components/main/mainComp';
 import FirstComp from './components/main/firstComp';
 import { useState } from 'react';
+import FooterComp from './components/footer/footerComp';
 
 
 function App() {
@@ -99,6 +100,7 @@ function App() {
                 />
                  
             </MainComp>
+            
         </div>
     );
 }

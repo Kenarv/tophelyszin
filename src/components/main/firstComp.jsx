@@ -7,6 +7,7 @@ import FullList from '../Pages/fullList';
 import UploadForm from '../forms/uploadForm';
 import PwChangeFrom from '../forms/pwChangeForm';
 import ResultList from '../Pages/resultList';
+import FooterComp from '../footer/footerComp';
 
 const FirstComp = ({
     filterObj,
@@ -64,6 +65,7 @@ const FirstComp = ({
             ) : (
                 <StartPage searchShowButtonObj={searchShowButtonObj} />
             )}
+            
         </>
     );
 };
