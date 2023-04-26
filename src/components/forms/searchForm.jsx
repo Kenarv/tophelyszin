@@ -1,14 +1,10 @@
 import ResultShowButton from '../Pages/resultShowButton';
 import SearchShowButton from '../Pages/searchShowButton';
 import { venues } from '../../Lists/test_list';
-//import { useEffect, useState } from 'react';
 
 const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
 
-    
-    
     const {formData,setFormData,filteredData,setFilteredData} = filterObj;
-    //const [filteredArray, setFilteredArray] = useState([]);
 
     function handleChange(event) {
 
@@ -21,83 +17,27 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
        
       }
 
-    // const filteringArray = () => { 
-    // // const Fkeys = Object.keys(formData);
-    // // const Fvalues = Object.values(formData);
-
-    // // const result = venues.filter(item => {
-    // //     return(
-    // //         Fkeys.map( ( element,index ) => {
-    // //             item[element].toString().includes(Fvalues[index].toString())
-    // //         })
-    // //     )
-    // //         }) 
-    // const result = venues.filter(item => {
-    //     return(
-    //             item.megye.toString().includes(formData.megye.toString()) &&
-    //             //item.kapacitas.toString().includes(formData.kapacitas.toString()) &&
-    //             item.etel.toString().includes(formData.etel.toString()) &&
-    //             item.bar.toString().includes(formData.bar.toString()) &&
-    //             //item.tancter.toString().includes(formData.tancter.toString()) &&
-    //             item.parkolo.toString().includes(formData.parkolo.toString()) &&
-    //             item.szallas.toString().includes(formData.szallas.toString()) &&
-    //             item.arkat.toString().includes(formData.arkat.toString())
-    //     )
-    //         }) 
-            
-    //         console.log("result")
-    //         console.log(result)
-    // // const result = Fkeys.map( ( element,index ) => {
-    // //         return(
-    // //             venues.filter(item => 
-    // //                 item[element].toString().includes(Fvalues[index].toString())
-    // //             )
-    // //         )
-    // //     })
-            
-    // //         console.log("result")
-    // //         console.log(result)
-    // };
-
-
-    //   useEffect(() => {
-        
-       
-        
-    //     // setFilteredArray(
-    //     //     ...filteredArray
-    //     //     ,filteringArray()
-    //     //     )
-        
-        
-
-    //   }, [formData]);
-      
-
-
       function handleSubmit(event) {
-        // filteringArray()
-        // console.log(formData)
-        // console.log(filteredArray)
-
         event.preventDefault();
         const filtered = venues.filter((item) => {
           return (
-            (formData.megye ? item.megye === formData.megye : true) &&
-            (formData.kapacitas ? item.kapacitas === formData.kapacitas : true) &&
-            (formData.etel ? item.etel === formData.etel : true) &&
-            (formData.bar ? item.bar === formData.bar : true) &&
-            (formData.klima ? item.klima === formData.klima : true) &&
-            (formData.tancter ? item.tancter === formData.tancter : true) &&
-            (formData.parkolo ? item.parkolo === formData.parkolo : true) &&
-            (formData.szallas ? item.szallas === formData.szallas : true) &&
-            (formData.arkat ? item.arkat === formData.arkat : true)
+            (formData.megye ? item.megye.includes(formData.megye) : true) &&
+            (formData.kapacitas ? formData.kapacitas.split('-')[0] < item.kapacitas < formData.kapacitas.split('-')[1] : true) &&
+            (formData.etel ? item.etel.toString().includes(formData.etel) : true) &&
+            (formData.bar ? item.bar.toString().includes(formData.bar) : true) &&
+            (formData.klima ? item.klima.toString().includes( formData.klima) : true) &&
+            //(formData.tancter ? item.tancter === formData.tancter : true) &&
+            (formData.parkolo ? item.parkolo.toString().includes(formData.parkolo) : true) &&
+            (formData.szallas ? item.szallas.toString().includes(formData.szallas) : true) &&
+            (formData.arkat ? item.arkat.includes(formData.arkat) : true)
           );
         });
-
+        
         setFilteredData(filtered);
-        console.log(filteredData);
+        console.log(filteredData)
       }
+      
+      // const kapacitasValue = value.split('-') // result: kapacitasValue[20,60]
 
     return (
         <>
@@ -108,38 +48,38 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             Válassza ki a kivánt megyét:
                         </label>
                         <select name="megye" id="MegyeNev" className="my-3" onChange={handleChange}>
-                            <option value="Bács-Kiskun">Bács-Kiskun</option>
-                            <option value="Baranya">Baranya</option>
-                            <option value="Békés">Békés</option>
-                            <option value="Borsod-Abaúj-Zemplén">
-                                Borsod-Abaúj-Zemplén
+                            <option value="Bács-Kiskun vármegye">Bács-Kiskun vármegye</option>
+                            <option value="Baranya vármegye">Baranya vármegye</option>
+                            <option value="Békés vármegye">Békés vármegye</option>
+                            <option value="Borsod-Abaúj-Zemplén vármegye">
+                                Borsod-Abaúj-Zemplén vármegye
                             </option>
-                            <option value="Csongrád-Csanád">
-                                Csongrád-Csanád
+                            <option value="Csongrád-Csanád vármegye">
+                                Csongrád-Csanád vármegye
                             </option>
-                            <option value="Fejér">Fejér</option>
-                            <option value="Győr-Moson-Sopron">
-                                Győr-Moson-Sopron
+                            <option value="Fejér vármegye">Fejér vármegye</option>
+                            <option value="Győr-Moson-Sopron vármegye">
+                                Győr-Moson-Sopron vármegye
                             </option>
-                            <option value="Hajdú-Bihar">Hajdú-Bihar</option>
-                            <option value="Heves">Heves</option>
-                            <option value="Jász-Nagykun-Szolnok">
-                                Jász-Nagykun-Szolnok
+                            <option value="Hajdú-Bihar vármegye">Hajdú-Bihar vármegye</option>
+                            <option value="Heves vármegye">Heves vármegye</option>
+                            <option value="Jász-Nagykun-Szolnok vármegye">
+                                Jász-Nagykun-Szolnok vármegye
                             </option>
-                            <option value="Komárom-Esztergom">
-                                Komárom-Esztergom
+                            <option value="Komárom-Esztergom vármegye">
+                                Komárom-Esztergom vármegye
                             </option>
-                            <option value="Nógrád">Nógrád</option>
-                            <option value="Pest">Pest</option>
-                            <option value="Somogy">Somogy</option>
-                            <option value="Szabolcs-Szatmár-Bereg">
-                                Szabolcs-Szatmár-Bereg
+                            <option value="Nógrád vármegye">Nógrád vármegye</option>
+                            <option value="Pest vármegye">Pest vármegye</option>
+                            <option value="Somogy vármegye">Somogy vármegye</option>
+                            <option value="Szabolcs-Szatmár-Bereg vármegye">
+                                Szabolcs-Szatmár-Bereg vármegye
                             </option>
-                            <option value="Tolna">Tolna</option>
-                            <option value="Vas">Vas</option>
-                            <option value="Veszprém">Veszprém</option>
-                            <option value="Zala">Zala</option>
-                            <option value="Budapest">Budapest</option>
+                            <option value="Tolna vármegye">Tolna vármegye</option>
+                            <option value="Vas vármegye">Vas vármegye</option>
+                            <option value="Veszprém vármegye">Veszprém vármegye</option>
+                            <option value="Zala vármegye">Zala vármegye</option>
+                            <option value="Budapest vármegye">Budapest vármegye</option>
                         </select>
                     </div>
                     <div className="flex flex-col">
@@ -152,9 +92,9 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             className="my-3"
                             onChange={handleChange}
                         >
-                            <option value="20-60 fő">20-60 fő</option>
-                            <option value="60-150 fő">60-150 fő</option>
-                            <option value="150+ fő">150+ fő</option>
+                            <option value="20-60">20-60 fő</option>
+                            <option value="60-150">60-150 fő</option>
+                            <option value="150-5000">150+ fő</option>
                         </select>
                     </div>
                     <div className="flex flex-col">
@@ -168,7 +108,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                                 name="etel"
                                 value="1"
                                 onChange={handleChange}
-                                checked
+                                
                             />
                             <label>Igen</label>
 
@@ -194,7 +134,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                                 name="bar"
                                 value="1"
                                 onChange={handleChange}
-                                checked
+                                
                             />
                             <label>Igen</label>
 
@@ -218,7 +158,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                                 name="klima"
                                 value="1"
                                 onChange={handleChange}
-                                checked
+                                
                             />
                             <label>Igen</label>
 
@@ -244,7 +184,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             <option value="50-70">
                                 közepes tánctér(50-70 &#13217;)
                             </option>
-                            <option value="80+">
+                            <option value="80-+">
                                 csarnok(80+ &#13217;)
                             </option>
                         </select>
@@ -260,7 +200,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                                 name="parkolo"
                                 value="1"
                                 onChange={handleChange}
-                                checked
+                                
                             />
                             <label>Igen</label>
                             <input
@@ -284,7 +224,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                                 name="szallas"
                                 value="1"
                                 onChange={handleChange}
-                                checked
+                                
                             />
                             <label>Igen</label>
 
