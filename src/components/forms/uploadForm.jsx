@@ -3,7 +3,7 @@ import UploadShowButton from "../Pages/uploadShowbutton";
 const UploadForm = props => {
     return (
         <>
-            <div className="animate-form-animation flex flex-col gap-2 w-[40rem]  mx-auto form-animation p-20 bg-sky-300/30 rounded-xl shadow-lg">
+            <div className="animate-form-animation flex flex-col gap-2 w-[390px] md:w-[800px] mx-auto form-animation p-20 bg-sky-300/50 rounded-xl shadow-2xl">
                 <form action="">
                     <div className="grid grid-cols-1">
                         <label className="font-bold py-2" htmlFor="HelyNev">
@@ -33,7 +33,7 @@ const UploadForm = props => {
                                 Város:
                             </label>
                             <input
-                                className="w-32 h-8 ml-2 border-2 border-sky-200 rounded-lg py-1 focus:outline-none focus:border-sky-700"
+                                className="w-24 desktop:w-32 h-8 ml-2 border-2 border-sky-200 rounded-lg py-1 focus:outline-none focus:border-sky-700"
                                 type="text"
                                 name="Varos"
                                 id="VarosID"

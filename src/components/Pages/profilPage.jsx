@@ -19,7 +19,7 @@ const ProfilPage = ({
     function handleMoreInfo(state,setter,idSetter,toSet) {
         !state ? setter(true) : setter(false);
         idSetter(toSet);
-}
+    }
 
 
     return (

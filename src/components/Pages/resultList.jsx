@@ -6,9 +6,13 @@ const ResultList = ({filterObj,resultShowButtonObj,}) => {
 
     const { filteredData } = filterObj;
    
-
+    const [clickedID, setClickedID] = useState();
     const [clicked, setClicked] = useState(false);
 
+    function handleMoreInfo(state,setter,idSetter,toSet) {
+        !state ? setter(true) : setter(false);
+        idSetter(toSet);
+    }
 
     return (
         <>
@@ -22,9 +26,7 @@ const ResultList = ({filterObj,resultShowButtonObj,}) => {
                                         key={element.id}
                                         className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/20 duration-300"
                                         onClick={() =>
-                                            !clicked
-                                                ? setClicked(true)
-                                                : setClicked(false)
+                                            handleMoreInfo(clicked,setClicked,setClickedID,element.id)
                                         }
                                     >
                                         <div className="row-span-3">
@@ -54,7 +56,7 @@ const ResultList = ({filterObj,resultShowButtonObj,}) => {
                                                 {element.hazszam}
                                             </p>
                                         </div>
-                                        {clicked && (
+                                        {clicked && (clickedID === element.id) && (
                                             <div className="row-span-2 col-span-3">
                                                 <p className="text-lg desktop:text-xl text-sky-800">
                                                     Helyszín kapacitás:{' '}
