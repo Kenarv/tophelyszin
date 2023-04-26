@@ -1,35 +1,97 @@
 import ResultShowButton from '../Pages/resultShowButton';
 import SearchShowButton from '../Pages/searchShowButton';
 import { venues } from '../../Lists/test_list';
+//import { useEffect, useState } from 'react';
 
 const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
 
     
     
     const {formData,setFormData,filteredData,setFilteredData} = filterObj;
+    //const [filteredArray, setFilteredArray] = useState([]);
 
     function handleChange(event) {
 
         const { name, value } = event.target;
-
-        setFormData((prevState) => ({
-          ...prevState,
+        
+        setFormData({
+          ...formData,
           [name]: value
-        }));
+        });
+       
       }
 
+    // const filteringArray = () => { 
+    // // const Fkeys = Object.keys(formData);
+    // // const Fvalues = Object.values(formData);
+
+    // // const result = venues.filter(item => {
+    // //     return(
+    // //         Fkeys.map( ( element,index ) => {
+    // //             item[element].toString().includes(Fvalues[index].toString())
+    // //         })
+    // //     )
+    // //         }) 
+    // const result = venues.filter(item => {
+    //     return(
+    //             item.megye.toString().includes(formData.megye.toString()) &&
+    //             //item.kapacitas.toString().includes(formData.kapacitas.toString()) &&
+    //             item.etel.toString().includes(formData.etel.toString()) &&
+    //             item.bar.toString().includes(formData.bar.toString()) &&
+    //             //item.tancter.toString().includes(formData.tancter.toString()) &&
+    //             item.parkolo.toString().includes(formData.parkolo.toString()) &&
+    //             item.szallas.toString().includes(formData.szallas.toString()) &&
+    //             item.arkat.toString().includes(formData.arkat.toString())
+    //     )
+    //         }) 
+            
+    //         console.log("result")
+    //         console.log(result)
+    // // const result = Fkeys.map( ( element,index ) => {
+    // //         return(
+    // //             venues.filter(item => 
+    // //                 item[element].toString().includes(Fvalues[index].toString())
+    // //             )
+    // //         )
+    // //     })
+            
+    // //         console.log("result")
+    // //         console.log(result)
+    // };
+
+
+    //   useEffect(() => {
+        
+       
+        
+    //     // setFilteredArray(
+    //     //     ...filteredArray
+    //     //     ,filteringArray()
+    //     //     )
+        
+        
+
+    //   }, [formData]);
+      
+
+
       function handleSubmit(event) {
+        // filteringArray()
+        // console.log(formData)
+        // console.log(filteredArray)
+
         event.preventDefault();
         const filtered = venues.filter((item) => {
           return (
-            (formData.MegyeNev ? item.megye === formData.MegyeNev : true) &&
-            (formData.Kapacitas ? item.kapacitas === formData.Kapacitas : true) &&
-            (formData.Etel ? item.etel === formData.Etel : true) &&
-            (formData.Ital ? item.bar === formData.Ital : true) &&
-            (formData.Klima ? item.klima === formData.Klima : true) &&
-            (formData.Tancter ? item.tancter === formData.Tancter : true) &&
-            (formData.Parkolo ? item.parkolo === formData.Parkolo : true) &&
-            (formData.Szallas ? item.szallas === formData.Szallas : true) 
+            (formData.megye ? item.megye === formData.megye : true) &&
+            (formData.kapacitas ? item.kapacitas === formData.kapacitas : true) &&
+            (formData.etel ? item.etel === formData.etel : true) &&
+            (formData.bar ? item.bar === formData.bar : true) &&
+            (formData.klima ? item.klima === formData.klima : true) &&
+            (formData.tancter ? item.tancter === formData.tancter : true) &&
+            (formData.parkolo ? item.parkolo === formData.parkolo : true) &&
+            (formData.szallas ? item.szallas === formData.szallas : true) &&
+            (formData.arkat ? item.arkat === formData.arkat : true)
           );
         });
 
@@ -37,22 +99,15 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
         console.log(filteredData);
       }
 
-
-
-
-
-
-
-
     return (
         <>
             <div className="animate-form-animation flex flex-col gap-2 w-[390px] md:w-[800px] mx-auto form-animation p-20 bg-sky-300/50 rounded-xl shadow-2xl">
-                <form onSubmit={handleSubmit}>
+                
                     <div className="flex flex-col">
                         <label className="font-bold py-2" htmlFor="MegyeNev">
                             Válassza ki a kivánt megyét:
                         </label>
-                        <select name="MegyeNev" id="MegyeNev" className="my-3" onChange={handleChange}>
+                        <select name="megye" id="MegyeNev" className="my-3" onChange={handleChange}>
                             <option value="Bács-Kiskun">Bács-Kiskun</option>
                             <option value="Baranya">Baranya</option>
                             <option value="Békés">Békés</option>
@@ -88,11 +143,11 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                         </select>
                     </div>
                     <div className="flex flex-col">
-                        <label className="font-bold py-2" htmlFor="Kapacitas">
+                        <label className="font-bold py-2" htmlFor="kapacitas">
                             Válassza ki a kívánt kapacitást:
                         </label>
                         <select
-                            name="Kapacitas"
+                            name="kapacitas"
                             id="KapacitasID"
                             className="my-3"
                             onChange={handleChange}
@@ -110,17 +165,20 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             <input
                                 type="radio"
                                 id="EtelVanID"
-                                name="Etel"
+                                name="etel"
                                 value="1"
                                 onChange={handleChange}
+                                checked
                             />
                             <label>Igen</label>
 
                             <input
                                 type="radio"
                                 id="EtelNincsID"
-                                name="Etel"
+                                name="etel"
                                 value="0"
+                                onChange={handleChange}
+                                
                             />
                             <label>Nem</label>
                         </div>
@@ -133,17 +191,20 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             <input
                                 type="radio"
                                 id="ItalVanID"
-                                name="Ital"
+                                name="bar"
                                 value="1"
                                 onChange={handleChange}
+                                checked
                             />
                             <label>Igen</label>
 
                             <input
                                 type="radio"
                                 id="ItalNincsID"
-                                name="Ital"
+                                name="bar"
                                 value="0"
+                                onChange={handleChange}
+                                
                             />
                             <label>Nem</label>
                         </div>
@@ -154,17 +215,20 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             <input
                                 type="radio"
                                 id="KlimaVanID"
-                                name="Klima"
+                                name="klima"
                                 value="1"
                                 onChange={handleChange}
+                                checked
                             />
                             <label>Igen</label>
 
                             <input
                                 type="radio"
                                 id="KlimaNincsID"
-                                name="Klima"
+                                name="klima"
                                 value="0"
+                                onChange={handleChange}
+                                
                             />
                             <label>Nem</label>
                         </div>
@@ -173,14 +237,14 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                         <label className="font-bold py-2" htmlFor="Tancter">
                             Mekkora legyen a tánctér:
                         </label>
-                        <select name="Tancter" id="TancterID" className="my-3" onChange={handleChange}>
-                            <option value="40">
+                        <select name="tancter" id="TancterID" className="my-3" onChange={handleChange}>
+                            <option value="30-40">
                                 kis tánctér(30-40 &#13217;)
                             </option>
-                            <option value="50">
+                            <option value="50-70">
                                 közepes tánctér(50-70 &#13217;)
                             </option>
-                            <option value="80">
+                            <option value="80+">
                                 csarnok(80+ &#13217;)
                             </option>
                         </select>
@@ -193,16 +257,18 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             <input
                                 type="radio"
                                 id="ParkoloVanID"
-                                name="Parkolo"
+                                name="parkolo"
                                 value="1"
                                 onChange={handleChange}
+                                checked
                             />
                             <label>Igen</label>
                             <input
                                 type="radio"
                                 id="ParkoloNincsID"
-                                name="Parkolo"
+                                name="parkolo"
                                 value="0"
+                                onChange={handleChange}
                             />
                             <label>Nem</label>
                         </div>
@@ -215,17 +281,19 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             <input
                                 type="radio"
                                 id="SzallasVanID"
-                                name="Szallas"
+                                name="szallas"
                                 value="1"
                                 onChange={handleChange}
+                                checked
                             />
                             <label>Igen</label>
 
                             <input
                                 type="radio"
                                 id="SzallasNincsID"
-                                name="Szallas"
+                                name="szallas"
                                 value="0"
+                                onChange={handleChange}
                             />
                             <label>Nem</label>
                         </div>
@@ -235,7 +303,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             Árkategória:
                         </label>
                         <select
-                            name="Arkategoria"
+                            name="arkat"
                             id="ArkategoriaID"
                             className="my-3"
                             onChange={handleChange}
@@ -246,7 +314,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                         </select>
                     </div>
 
-                    <div className="flex flex-row gap-20">
+                    <div className="flex flex-row gap-20" onClick={handleSubmit}>
                         <ResultShowButton
                             resultShowButtonObj={resultShowButtonObj}
                         />
@@ -259,7 +327,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             </p>
                         </button> */}
                     </div>
-                </form>
+                
                 <div className="py-5">
                     <SearchShowButton
                         searchShowButtonObj={searchShowButtonObj}
