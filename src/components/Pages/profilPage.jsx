@@ -1,6 +1,6 @@
 import UploadShowButton from './uploadShowbutton';
 import {AiOutlineMail, AiOutlinePhone} from 'react-icons/ai';
-import {venues} from '../../Lists/test_list';
+//import {venues} from '../../Lists/test_list';
 import {useState, useEffect} from 'react';
 
 
@@ -18,7 +18,25 @@ function Logged() {
             });
     }, []); // [] üres tömb jelzi, hogy csak egyszer fusson le az useEffect hook
 
+    function handleDelete(id) {
+        // Törlés a szerverről
 
+
+        fetch("/modding.php?id=" + id, {
+            method: "DELETE",
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // Frissítjük a helyszinek állapotát a törlés után
+                setHelyszinek((prevHelyszinek) =>
+                    prevHelyszinek.filter((helyszin) => helyszin.helyszinID !== id)
+                );
+            });
+    }
+
+    if (loading) {
+        return <p>Betöltés...</p>;
+    }
     const ProfilPage = ({
                             uploadShowButtonObj,
                             pwChangeShowObj,
@@ -28,24 +46,6 @@ function Logged() {
         const [clicked, setClicked] = useState(false);
         const {setShowPwChange} = pwChangeShowObj;
         const {setLogged} = loggedButtonObj;
-
-        function handleDelete(id) {
-            // Törlés a szerverről
-            fetch("modding.php?id=" + id, {
-                method: "DELETE",
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    // Frissítjük a helyszinek állapotát a törlés után
-                    setHelyszinek((prevHelyszinek) =>
-                        prevHelyszinek.filter((helyszin) => helyszin.helyszinID !== id)
-                    );
-                });
-        }
-
-        if (loading) {
-            return <p>Betöltés...</p>;
-        }
 
 
         return (
@@ -220,7 +220,6 @@ function Logged() {
             </>
         );
     };
-
 }
 
 export default Logged;
