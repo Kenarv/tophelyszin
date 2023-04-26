@@ -2,6 +2,7 @@
     include "dbconn.php";
     include "functions.php";
 
+
     $data = json_decode(file_get_contents('php://input'), true);
 
 
@@ -27,7 +28,7 @@
         $szallas = $data['szallas'];
         $arkategoria = $data['arkategoria'];
         $megjegyzes = $data['megjegyzes'];
-        //$userID = $_SESSION['userID'];
+        $userID = $_SESSION['userID'];
 
 
 

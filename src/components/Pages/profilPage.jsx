@@ -4,39 +4,8 @@ import {AiOutlineMail, AiOutlinePhone} from 'react-icons/ai';
 import {useState, useEffect} from 'react';
 
 
-function Logged() {
-    const [helyszinek, setHelyszinek] = useState([]);
-    const [loading, setLoading] = useState(true);
+//function Logged() {
 
-    useEffect(() => {
-        // Az adatok betöltése az adatbázisból
-        fetch("/loggeduser.php")
-            .then((response) => response.json())
-            .then((data) => {
-                setHelyszinek(data);
-                setLoading(false);
-            });
-    }, []); // [] üres tömb jelzi, hogy csak egyszer fusson le az useEffect hook
-
-    function handleDelete(id) {
-        // Törlés a szerverről
-
-
-        fetch("/modding.php?id=" + id, {
-            method: "DELETE",
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                // Frissítjük a helyszinek állapotát a törlés után
-                setHelyszinek((prevHelyszinek) =>
-                    prevHelyszinek.filter((helyszin) => helyszin.helyszinID !== id)
-                );
-            });
-    }
-
-    if (loading) {
-        return <p>Betöltés...</p>;
-    }
     const ProfilPage = ({
                             uploadShowButtonObj,
                             pwChangeShowObj,
@@ -46,7 +15,38 @@ function Logged() {
         const [clicked, setClicked] = useState(false);
         const {setShowPwChange} = pwChangeShowObj;
         const {setLogged} = loggedButtonObj;
+        const [helyszinek, setHelyszinek] = useState([]);
+        const [loading, setLoading] = useState(true);
 
+        useEffect(() => {
+            // Az adatok betöltése az adatbázisból
+            fetch("/loggeduser.php")
+                .then((response) => response.json())
+                .then((data) => {
+                    setHelyszinek(data);
+                    setLoading(false);
+                });
+        }, []); // [] üres tömb jelzi, hogy csak egyszer fusson le az useEffect hook
+
+        function handleDelete(id) {
+            // Törlés a szerverről
+
+
+            fetch("/modding.php?id=" + id, {
+                method: "DELETE",
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    // Frissítjük a helyszinek állapotát a törlés után
+                    setHelyszinek((prevHelyszinek) =>
+                        prevHelyszinek.filter((helyszin) => helyszin.helyszinID !== id)
+                    );
+                });
+        }
+
+        if (loading) {
+            return <p>Betöltés...</p>;
+        }
 
         return (
             <>
@@ -220,6 +220,6 @@ function Logged() {
             </>
         );
     };
-}
 
-export default Logged;
+
+export default ProfilPage;

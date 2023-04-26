@@ -1,8 +1,8 @@
-//import UploadShowButton from "../Pages/uploadShowbutton";
+import UploadShowButton from "../Pages/uploadShowbutton";
 import React, { useState } from 'react';
 
 
-function UploadForm() {
+const UploadForm = props => {
     const [helyszinNev, sethelyszinNev] = useState('');
     const [helyszinIrsz, sethelyszinIrsz] = useState('');
     const [helyszinVaros, sethelyszinVaros] = useState('');
@@ -371,12 +371,14 @@ function UploadForm() {
                                 Feltöltés
                             </p>
                         </button>
-
+                        <UploadShowButton
+                            uploadShowButtonObj={props.uploadShowButtonObj}
+                        />
                     </div>
-                    
+
                 </form>
             </div>
         </>
     );
-}
+};
 export default UploadForm;
