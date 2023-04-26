@@ -16,6 +16,11 @@ const ProfilPage = ({
     console.log(clickedID);
 
 
+    function handleMoreInfo(state,setter,idSetter,toSet) {
+        !state ? setter(true) : setter(false);
+        idSetter(toSet);
+}
+
 
     return (
         <>
@@ -71,12 +76,7 @@ const ProfilPage = ({
                                         key={element.id}
                                         className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/20 duration-300"
                                         onClick={() => 
-                                            (!clicked
-                                            ? setClicked(true)
-                                            : setClicked(false) 
-                                            )
-                                            &&
-                                            setClickedID(element.id)
+                                            handleMoreInfo(clicked,setClicked,setClickedID,element.id)
                                             
                                         }
                                     >
@@ -113,7 +113,7 @@ const ProfilPage = ({
                                                 {element.hazszam}
                                             </p>
                                         </div>
-                                        {clicked && clickedID && (
+                                        {clicked && (clickedID === element.id) && (
                                             <div className="row-span-2 col-span-3">
                                                 <p className="text-lg desktop:text-xl text-sky-800">
                                                     Helyszín kapacitás:{' '}
