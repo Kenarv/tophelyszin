@@ -4,8 +4,8 @@ import { venues } from '../../Lists/test_list';
 
 const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
 
-    const {showSearch,setShowSearch} = searchShowButtonObj;
-    const {showResult,setShowResult} = resultShowButtonObj;
+    
+    
     const {formData,setFormData,filteredData,setFilteredData} = filterObj;
 
     function handleChange(event) {

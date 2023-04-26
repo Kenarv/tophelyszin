@@ -30,8 +30,10 @@ const FirstComp = ({
         <>
             {!logged ? (
                 showLogin ? (
-                    <LoginForm showLogin={showLogin}
-                    loggedButtonObj={loggedButtonObj} />
+                    <LoginForm
+                        showLogin={showLogin}
+                        loggedButtonObj={loggedButtonObj}
+                    />
                 ) : showReg ? (
                     <RegForm showReg={showReg} />
                 ) : showResult ? (
@@ -60,12 +62,20 @@ const FirstComp = ({
                 />
             ) : showFullList ? (
                 <FullList />
+            ) : showResult ? (
+                <ResultList
+                    resultShowButtonObj={resultShowButtonObj}
+                    filterObj={filterObj}
+                />
             ) : showSearch ? (
-                <SearchForm searchShowButtonObj={searchShowButtonObj} />
+                <SearchForm
+                    searchShowButtonObj={searchShowButtonObj}
+                    filterObj={filterObj}
+                    resultShowButtonObj={resultShowButtonObj}
+                />
             ) : (
                 <StartPage searchShowButtonObj={searchShowButtonObj} />
             )}
-            
         </>
     );
 };
