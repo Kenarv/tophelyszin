@@ -29,7 +29,8 @@ const FirstComp = ({
         <>
             {!logged ? (
                 showLogin ? (
-                    <LoginForm showLogin={showLogin} />
+                    <LoginForm showLogin={showLogin}
+                    loggedButtonObj={loggedButtonObj} />
                 ) : showReg ? (
                     <RegForm showReg={showReg} />
                 ) : showResult ? (

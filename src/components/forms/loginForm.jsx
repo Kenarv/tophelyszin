@@ -1,4 +1,7 @@
-const LoginForm = () => {
+const LoginForm = ({loggedButtonObj}) => {
+
+    const {setLogged} = loggedButtonObj;
+
     return (
         <div className="transition ease-in-out animate-form-animation flex flex-col gap-2 w-[390px] md:w-[800px] mx-auto form-animation p-20 bg-sky-300/50 rounded-xl shadow-2xl">
             <form action="">
