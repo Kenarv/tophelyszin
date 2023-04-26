@@ -1,7 +1,8 @@
 import UploadShowButton from './uploadShowbutton';
 import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
 import { venues } from '../../Lists/test_list';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 
 const ProfilPage = ({
     uploadShowButtonObj,
@@ -12,7 +13,15 @@ const ProfilPage = ({
     const [clicked, setClicked] = useState(false);
     const { setShowPwChange } = pwChangeShowObj;
     const { setLogged } = loggedButtonObj;
-    console.log(clicked);
+
+    //const {data, setData} = useState([]);
+    const [userHelyszin, setUserHelyszin] = useState({});
+
+    useEffect(() => {
+        fetch('/loggeduser.php')
+            .then(response => response.json())
+            .then(loggedHelyszin => setUserHelyszin(loggedHelyszin));
+    }, []);
 
     return (
         <>
@@ -21,7 +30,7 @@ const ProfilPage = ({
                     <div className="w-2/5 mb-5">
                         <div className=" flex items-center border-b-2 border-sky-500 pb-2">
                             <h1 className="text-3xl font-bold mr-2">
-                                Gipsz Jakab
+                                {}
                             </h1>
                             <div className="flex items-center">
                                 <button
@@ -49,32 +58,32 @@ const ProfilPage = ({
                         <div className="text-base columns-1 desktop:columns-2 gap-2 pt-5">
                             <div className="flex items-center gap-2">
                                 <AiOutlineMail />
-                                <p>Email@Email</p>
+                                <p>{}</p>
                             </div>
                             <div className="flex items-center gap-2">
                                 <AiOutlinePhone />
-                                <p>+36301234567</p>
+                                <p>{}</p>
                             </div>
                         </div>
                     </div>
                     <div className="border-solid border-sky-500 rounded-lg border-2">
                         <div className="grid grid-cols-1 gap-5 p-5 w-full">
-                            {venues.map(element => {
-                                const nameLength = String(element.name).length;
+                            {userHelyszin.map(element => {
+                                const nameLength = String(element.helyszinNev).length;
 
                                 console.log(clickedID);
                                 console.log(clicked);
 
                                 return (
                                     <div
-                                        key={element.id}
+                                        key={element.helyszinID}
                                         className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/20 duration-300"
                                         onClick={() =>
                                             (!clicked
                                             ? setClicked(true)
-                                            : setClicked(false) 
+                                            : setClicked(false)
                                             )  &&
-                                            setClickedID(element.id.valueOf)
+                                            setClickedID(element.helyszinID.valueOf)
                                         }
                                     >
                                         <div className="row-span-3">
@@ -93,21 +102,21 @@ const ProfilPage = ({
                                                         : 'text-2xl'
                                                 } desktop:text-3xl text-sky-700`}
                                             >
-                                                {element.name}
+                                                {element.helyszinNev}
                                             </p>
                                         </div>
                                         <div className="row-span-2 col-span-2">
                                             <p className="text-xl desktop:text-2xl text-sky-700">
-                                                {element.megye}
+                                                {element.helyszinVarMegye}
                                             </p>
                                             <p className="text-lg desktop:text-xl text-sky-700">
-                                                {element.varos}
+                                                {element.helyszinVaros}
                                             </p>
                                             <p className="text-lg desktop:text-xl text-sky-700">
-                                                {element.utca}
+                                                {element.helyszinUtca}
                                             </p>
                                             <p className="text-lg desktop:text-xl text-sky-700">
-                                                {element.hazszam}
+                                                {element.helyszinHsz}
                                             </p>
                                         </div>
                                         {clicked && clickedID && (
@@ -124,7 +133,7 @@ const ProfilPage = ({
                                                 </p>
                                                 <p className="text-lg desktop:text-xl text-sky-800">
                                                     Bár:{' '}
-                                                    {element.bar === 1
+                                                    {element.ital === 1
                                                         ? 'igen'
                                                         : 'nem'}
                                                 </p>
@@ -151,10 +160,10 @@ const ProfilPage = ({
                                                         : 'nem'}
                                                 </p>
                                                 <p className="text-lg desktop:text-xl text-sky-800">
-                                                    Árkategória: {element.arkat}
+                                                    Árkategória: {element.arkategoria}
                                                 </p>
                                                 <p className="text-lg desktop:text-xl text-sky-800">
-                                                    Megjegyzés: {element.megj}
+                                                    Megjegyzés: {element.megjegyzes}
                                                 </p>
                                             </div>
                                         )}
