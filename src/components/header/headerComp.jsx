@@ -36,7 +36,7 @@ const HeaderComp = props => {
     }
 
     return (
-        <div className="z-10 w-full h-20 bg-gradient-to-r from-sky-300 via-indigo-300 to-sky-500 items-center justify-center">
+        <div className="z-10 w-full h-20 bg-gradient-to-r from-sky-300 via-sky-600 to-sky-500 items-center justify-center">
             <div className="h-full flex items-center">
                 <img
                     src={th_logo}

@@ -3,7 +3,7 @@ import UploadShowButton from "../Pages/uploadShowbutton";
 const UploadForm = props => {
     return (
         <>
-            <div className="animate-form-animation flex flex-col gap-2 w-[390px] md:w-[800px] mx-auto form-animation p-20 bg-sky-300/50 rounded-xl shadow-2xl">
+            <div className="animate-form-animation flex flex-col gap-2 w-[390px] md:w-[800px] mx-auto form-animation p-20 bg-gradient-to-r from-sky-300/50 via-sky-600/50 to-sky-500/50 rounded-xl shadow-2xl">
                 <form action="">
                     <div className="grid grid-cols-1">
                         <label className="font-bold py-2" htmlFor="HelyNev">

@@ -21,10 +21,10 @@ const ProfilPage = ({
         idSetter(toSet);
     }
 
-
+    
     return (
         <>
-            <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-sky-500/30 rounded-xl shadow-lg">
+            <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-gradient-to-r from-sky-300/50 via-sky-600/50 to-sky-500/50 rounded-xl shadow-lg">
                 <div className=" p-10 grid-flow-row auto-rows-max">
                     <div className="w-2/5 mb-5">
                         <div className=" flex items-center border-b-2 border-sky-500 pb-2">

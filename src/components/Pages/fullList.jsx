@@ -12,7 +12,7 @@ const FullList = () => {
 
     return (
         <>
-            <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-sky-500/30 rounded-xl shadow-lg">
+            <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-gradient-to-r from-sky-300/50 via-sky-600/50 to-sky-500/50 rounded-xl shadow-lg">
                 <div className="border-solid border-sky-500 rounded-lg ">
                     <div className="grid grid-cols-1 gap-5 p-5 w-full">
                         {venues.map(element => {
