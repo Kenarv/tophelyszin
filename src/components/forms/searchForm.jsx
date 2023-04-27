@@ -26,7 +26,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
             (formData.etel ? item.etel.toString().includes(formData.etel) : true) &&
             (formData.bar ? item.bar.toString().includes(formData.bar) : true) &&
             (formData.klima ? item.klima.toString().includes( formData.klima) : true) &&
-            //(formData.tancter ? item.tancter === formData.tancter : true) &&
+            (formData.tancter ? formData.tancter.split('-')[0] < item.tancter < formData.tancter.split('-')[1] : true) &&
             (formData.parkolo ? item.parkolo.toString().includes(formData.parkolo) : true) &&
             (formData.szallas ? item.szallas.toString().includes(formData.szallas) : true) &&
             (formData.arkat ? item.arkat.includes(formData.arkat) : true)
@@ -37,6 +37,9 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
         console.log(filteredData)
       }
       
+      
+
+
       // const kapacitasValue = value.split('-') // result: kapacitasValue[20,60]
 
     return (
@@ -184,7 +187,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             <option value="50-70">
                                 közepes tánctér(50-70 &#13217;)
                             </option>
-                            <option value="80-+">
+                            <option value="80-5000">
                                 csarnok(80+ &#13217;)
                             </option>
                         </select>
