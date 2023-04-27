@@ -21,6 +21,16 @@ function App() {
     const [logged, setLogged] = useState(false);
     
 
+    const resetObj = {
+        setShowLogin,
+        setShowReg,
+        setShowSearch,
+        setShowUpload,
+        setShowProfil,
+        setShowFullList,
+        setShowPwChange,
+        setShowResult,
+    }
 
     const filterObj = {
         formData,
@@ -83,6 +93,7 @@ function App() {
                 profilShowButtonObj={profilShowButtonObj}
                 fullListShowButtonObj={fullListShowButtonObj}
                 loggedButtonObj={loggedButtonObj}
+                resetObj={resetObj}
             />
             <MainComp>
                 {' '}

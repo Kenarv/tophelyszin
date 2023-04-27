@@ -6,6 +6,10 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
 
     const {formData,setFormData,filteredData,setFilteredData} = filterObj;
 
+
+    
+
+
     function handleChange(event) {
 
         const { name, value } = event.target;
@@ -14,7 +18,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
           ...formData,
           [name]: value
         });
-       
+       console.log(formData)
       }
 
       function handleSubmit(event) {
@@ -34,6 +38,10 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
         });
         
         setFilteredData(filtered);
+
+        setFormData([]);
+        console.log("formdataadatok")
+        console.log(formData)
         console.log(filteredData)
       }
       
