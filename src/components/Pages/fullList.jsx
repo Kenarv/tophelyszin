@@ -65,7 +65,7 @@ const FullList = () => {
                                         </p>
                                     </div>
                                     {clicked && clickedID === element.id && (
-                                        <div className="row-span-2 col-span-3">
+                                        <div className="row-span-2 col-span-3 bg-gradient-to-t from-sky-300/40 via-sky-300/70 to-sky-400/70 rounded-xl text-center">
                                             <p className="text-lg desktop:text-xl text-sky-800">
                                                 Helyszín kapacitás:{' '}
                                                 {element.kapacitas}

@@ -74,7 +74,7 @@ const ProfilPage = ({
                                 return (
                                     <div
                                         key={element.id}
-                                        className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/20 duration-300"
+                                        className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-400/20 duration-300"
                                         onClick={() => 
                                             handleMoreInfo(clicked,setClicked,setClickedID,element.id)
                                             
@@ -114,7 +114,7 @@ const ProfilPage = ({
                                             </p>
                                         </div>
                                         {clicked && (clickedID === element.id) && (
-                                            <div className="row-span-2 col-span-3">
+                                            <div className="row-span-2 col-span-3 bg-gradient-to-t from-sky-300/40 via-sky-300/70 to-sky-400/70 rounded-xl text-center">
                                                 <p className="text-lg desktop:text-xl text-sky-800">
                                                     Helyszín kapacitás:{' '}
                                                     {element.kapacitas}
