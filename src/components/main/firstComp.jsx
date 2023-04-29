@@ -9,6 +9,7 @@ import PwChangeFrom from '../forms/pwChangeForm';
 import ResultList from '../Pages/resultList';
 
 const FirstComp = ({
+    loggedUserNameObj,
     filterObj,
     resultShowButtonObj,
     loggedButtonObj,
@@ -50,7 +51,10 @@ const FirstComp = ({
                     <StartPage searchShowButtonObj={searchShowButtonObj} />
                 )
             ) : showPwChange ? (
-                <PwChangeFrom pwChangeShowObj={pwChangeShowObj} />
+                <PwChangeFrom
+                    pwChangeShowObj={pwChangeShowObj}
+                    loggedUserNameObj={loggedUserNameObj}
+                />
             ) : showUpload ? (
                 <UploadForm uploadShowButtonObj={uploadShowButtonObj} />
             ) : showProfil ? (
@@ -58,6 +62,7 @@ const FirstComp = ({
                     uploadShowButtonObj={uploadShowButtonObj}
                     pwChangeShowObj={pwChangeShowObj}
                     loggedButtonObj={loggedButtonObj}
+                    loggedUserNameObj={loggedUserNameObj}
                 />
             ) : showFullList ? (
                 <FullList />

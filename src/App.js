@@ -13,6 +13,8 @@ function App() {
     const [showFullList, setShowFullList] = useState(false);
     const [showPwChange, setShowPwChange] = useState(false);
     const [showResult, setShowResult] = useState(false);
+    const [LoggedUserName, setLoggedUserName] = useState([]);
+
 
     const [formData, setFormData] = useState({});
     const [filteredData, setFilteredData] = useState([]);
@@ -20,6 +22,11 @@ function App() {
     const [logged, setLogged] = useState(false);
     
 
+
+    const loggedUserNameObj = {
+        LoggedUserName,
+        setLoggedUserName,
+    }
 
     const filterObj = {
         formData,
@@ -96,6 +103,7 @@ function App() {
                     loggedButtonObj={loggedButtonObj}
                     resultShowButtonObj={resultShowButtonObj}
                     filterObj={filterObj}
+                    loggedUserNameObj={loggedUserNameObj}
                 />
                  
             </MainComp>

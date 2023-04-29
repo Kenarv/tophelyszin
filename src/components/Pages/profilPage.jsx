@@ -11,18 +11,21 @@ import {data} from "autoprefixer";
                             uploadShowButtonObj,
                             pwChangeShowObj,
                             loggedButtonObj,
+                            loggedUserNameObj,
                         }) => {
+
+
         const [clickedID, setClickedID] = useState();
         const [clicked, setClicked] = useState(false);
-        const {setShowPwChange} = pwChangeShowObj;
-        const {setLogged} = loggedButtonObj;
-        const [LoggedUserName, setLoggedUserName] = useState([]);
         const [LoggedUserPhone, setLoggedUserPhone] = useState([]);
         const [LoggedUserEmail, setLoggedUserEmail] = useState([]);
         const [helyszinek, setHelyszinek] = useState([]);
         const [loading, setLoading] = useState(true);
-
-
+        
+        
+        const {setShowPwChange} = pwChangeShowObj;
+        const {setLogged} = loggedButtonObj;
+        const {LoggedUserName, setLoggedUserName} = loggedUserNameObj;
 
         useEffect(() => {
             // Az adatok betöltése az adatbázisból

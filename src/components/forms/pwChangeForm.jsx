@@ -1,13 +1,14 @@
 import {useState} from "react";
 
-const PwChangeFrom = ({pwChangeShowObj}) => {
+const PwChangeFrom = ({pwChangeShowObj, loggedUserNameObj,}) => {
 
-    const { setShowPwChange } = pwChangeShowObj;
     const [new_password, set_new_password] = useState('');
     const [new_confirmPassword, set_new_confirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    
+    const {LoggedUserName, setLoggedUserName} = loggedUserNameObj
 
-
+    const { setShowPwChange } = pwChangeShowObj;
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -41,7 +42,7 @@ const PwChangeFrom = ({pwChangeShowObj}) => {
             <form onSubmit={handleSubmit}>
                 <div className="flex flex-col">
                     <p className="font-bold">
-                        felhasználónév:
+                        felhasználónév: {LoggedUserName}
                     </p>
                     <br/>
 
