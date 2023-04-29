@@ -1,5 +1,4 @@
 <?php
-
     include "dbconn.php";
     session_start();
 
@@ -7,28 +6,24 @@
     if (isset($_SESSION['userID'])) {
 
         $userID = $_SESSION['userID'];
-        //$username = $_SESSION['username'];
-        //$loggedUser = $_SESSION['loggedUser'];
+        $username = $_SESSION['username'];
+        $loggedUser = $_SESSION['loggedUser'];
 
-        $query = "select * from helyszin where userID = '$userID'";
 
-        $result = mysqli_query($conn, $query);
-
-        $data = array();
-        while ($row = mysqli_fetch_assoc($result)) {
-            $data[] = $row;
-        }
-
+        //$logged=array();
+        $logged = $loggedUser;
         // JSON formátumban visszaadás
         header("Content-Type: application/json");
-        echo json_encode($data);
+        echo json_encode($logged);
+
 
         $_SESSION['loggedIn'] = true;
 
-        // Adatbázis kapcsolat lezárása
-        mysqli_close($conn);
-
-
-
-
     }
+
+    //redirect to login
+    //echo("Be kell jelentkezni!");
+    //header("Location: login.php");
+    //die;
+
+

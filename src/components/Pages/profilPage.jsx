@@ -2,6 +2,7 @@ import UploadShowButton from './uploadShowbutton';
 import {AiOutlineMail, AiOutlinePhone} from 'react-icons/ai';
 //import {venues} from '../../Lists/test_list';
 import {useState, useEffect} from 'react';
+import {data} from "autoprefixer";
 
 
 //function Logged() {
@@ -15,16 +16,33 @@ import {useState, useEffect} from 'react';
         const [clicked, setClicked] = useState(false);
         const {setShowPwChange} = pwChangeShowObj;
         const {setLogged} = loggedButtonObj;
+        const [LoggedUserName, setLoggedUserName] = useState([]);
+        const [LoggedUserPhone, setLoggedUserPhone] = useState([]);
+        const [LoggedUserEmail, setLoggedUserEmail] = useState([]);
         const [helyszinek, setHelyszinek] = useState([]);
         const [loading, setLoading] = useState(true);
+
+
 
         useEffect(() => {
             // Az adatok betöltése az adatbázisból
             fetch("/loggeduser.php")
                 .then((response) => response.json())
+                .then((logged) => {
+                    setLoggedUserName(logged.username);
+                    setLoggedUserEmail(logged.email);
+                    setLoggedUserPhone(logged.phone);
+                    });
+        }, []);
+
+        useEffect(() => {
+            // Az adatok betöltése az adatbázisból
+            fetch("/loggedhelyszin.php")
+                .then((response) => response.json())
                 .then((data) => {
                     setHelyszinek(data);
                     setLoading(false);
+
                 });
         }, []); // [] üres tömb jelzi, hogy csak egyszer fusson le az useEffect hook
 
@@ -56,7 +74,7 @@ import {useState, useEffect} from 'react';
                         <div className="w-2/5 mb-5">
                             <div className=" flex items-center border-b-2 border-sky-500 pb-2">
                                 <h1 className="text-3xl font-bold mr-2">
-                                    {}
+                                    {LoggedUserName}
                                 </h1>
                                 <div className="flex items-center">
                                     <button
@@ -84,11 +102,11 @@ import {useState, useEffect} from 'react';
                             <div className="text-base columns-1 desktop:columns-2 gap-2 pt-5">
                                 <div className="flex items-center gap-2">
                                     <AiOutlineMail/>
-                                    <p>{}</p>
+                                    <p>{LoggedUserEmail}</p>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <AiOutlinePhone/>
-                                    <p>{}</p>
+                                    <p>{LoggedUserPhone}</p>
                                 </div>
                             </div>
                         </div>

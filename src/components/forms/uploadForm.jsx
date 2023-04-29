@@ -20,6 +20,7 @@ const UploadForm = props => {
     const [arkategoria, setarkategoria] = useState('Szerény');
     const [megjegyzes, setmegjegyzes] = useState('');
 
+
     const handleSubmit = (event) => {
         event.preventDefault();
         fetch('/upload.php', {
@@ -44,11 +45,11 @@ const UploadForm = props => {
             })
         })
             .then(response => response.text())
-            .then(adat => {
-                if (adat.includes("Az adatokat sikeresen tároltuk")) {
+            .then(data => {
+                if (data.includes("Az adatokat sikeresen tároltuk")) {
                     alert('Sikeres tárolás!');
                 }
-                if (adat.includes("Hiba történt a tárolás közben: ")) {
+                if (data.includes("Hiba történt a tárolás közben: ")) {
                     alert('Hiba');
                 }
 
@@ -59,6 +60,7 @@ const UploadForm = props => {
                 //setErrorMessage('Hiba történt a regisztráció során. Kérjük, próbálja meg később.');
             });
     };
+
 
     return (
         <>
@@ -380,5 +382,5 @@ const UploadForm = props => {
             </div>
         </>
     );
-};
+}
 export default UploadForm;
