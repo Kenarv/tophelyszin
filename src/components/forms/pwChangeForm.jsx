@@ -22,6 +22,7 @@ const PwChangeFrom = ({pwChangeShowObj, loggedUserNameObj,}) => {
                     alert(data.error);
                 } else {
                     alert(data.success);
+                    setShowPwChange(false);
                 }
             })
             .catch(error => {
