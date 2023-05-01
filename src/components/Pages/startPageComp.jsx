@@ -3,7 +3,7 @@ import SearchShowButton from './searchShowButton';
 const StartPage = props => {
     return (
         <>
-            <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-20 bg-sky-500/30 rounded-xl shadow-lg">
+            <div className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-20 bg-gradient-to-r from-sky-300/50 via-sky-600/50 to-sky-500/50 rounded-xl shadow-lg">
                 <div className="text-center mt-15 drop-shadow-3xl">
                     <div className="w-35 desktop:w-full">
                         <h1 className="font-bold text-2xl desktop:text-4xl my-10  ">

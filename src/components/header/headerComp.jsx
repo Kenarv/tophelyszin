@@ -6,14 +6,43 @@ import RegShowButton from './regShowButton';
 
 const HeaderComp = props => {
     const { logged, setLogged } = props.loggedButtonObj;
+    const {
+        setShowLogin,
+        setShowReg,
+        setShowSearch,
+        setShowUpload,
+        setShowProfil,
+        setShowFullList,
+        setShowPwChange,
+        setShowResult,
+    } = props.resetObj;
+
+
+    function spiner(){
+        "animate-spin"
+    }
+
+    function handleReset(){
+        setShowLogin(false);
+        setShowReg(false);
+        setShowSearch(false);
+        setShowUpload(false);
+        setShowProfil(false);
+        setShowFullList(false);
+        setShowPwChange(false);
+        setShowResult(false);
+        spiner();
+        
+    }
 
     return (
-        <div className="z-10 w-full h-20 bg-sky-200/50 items-center justify-center">
+        <div className="z-10 w-full h-20 bg-gradient-to-r from-sky-300 via-sky-600 to-sky-500 items-center justify-center">
             <div className="h-full flex items-center">
                 <img
                     src={th_logo}
                     alt="th_logo"
-                    className="align-center ml-5 mr-10 select-none w-50 h-20 "
+                    className="align-center ml-5 mr-10 select-none w-50 h-20"
+                    onClick={handleReset}
                 />
 
                 {!logged ? (

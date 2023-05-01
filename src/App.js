@@ -4,6 +4,7 @@ import FirstComp from './components/main/firstComp';
 import { useState } from 'react';
 
 
+
 function App() {
     const [showLogin, setShowLogin] = useState(false);
     const [showReg, setShowReg] = useState(false);
@@ -22,6 +23,16 @@ function App() {
     const [logged, setLogged] = useState(false);
     
 
+    const resetObj = {
+        setShowLogin,
+        setShowReg,
+        setShowSearch,
+        setShowUpload,
+        setShowProfil,
+        setShowFullList,
+        setShowPwChange,
+        setShowResult,
+    }
 
     const loggedUserNameObj = {
         LoggedUserName,
@@ -89,6 +100,7 @@ function App() {
                 profilShowButtonObj={profilShowButtonObj}
                 fullListShowButtonObj={fullListShowButtonObj}
                 loggedButtonObj={loggedButtonObj}
+                resetObj={resetObj}
             />
             <MainComp>
                 {' '}
@@ -107,6 +119,7 @@ function App() {
                 />
                  
             </MainComp>
+            
         </div>
     );
 }

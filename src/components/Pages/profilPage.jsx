@@ -1,9 +1,6 @@
 import UploadShowButton from './uploadShowbutton';
 import {AiOutlineMail, AiOutlinePhone} from 'react-icons/ai';
-//import {venues} from '../../Lists/test_list';
 import {useState, useEffect} from 'react';
-import {data} from "autoprefixer";
-
 
 //function Logged() {
 
@@ -21,8 +18,8 @@ import {data} from "autoprefixer";
         const [LoggedUserEmail, setLoggedUserEmail] = useState([]);
         const [helyszinek, setHelyszinek] = useState([]);
         const [loading, setLoading] = useState(true);
-        
-        
+
+
         const {setShowPwChange} = pwChangeShowObj;
         const {setLogged} = loggedButtonObj;
         const {LoggedUserName, setLoggedUserName} = loggedUserNameObj;
@@ -69,10 +66,13 @@ import {data} from "autoprefixer";
             return <p>Betöltés...</p>;
         }
 
-        return (
+    function handleMoreInfo(state,setter,idSetter,toSet) {
+        !state ? setter(true) : setter(false);
+        idSetter(toSet);
+    }    return (
             <>
                 <div
-                    className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-sky-500/30 rounded-xl shadow-lg">
+                    className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-gradient-to-r from-sky-300/50 via-sky-600/50 to-sky-500/50 rounded-xl shadow-lg">
                     <div className=" p-10 grid-flow-row auto-rows-max">
                         <div className="w-2/5 mb-5">
                             <div className=" flex items-center border-b-2 border-sky-500 pb-2">
@@ -118,28 +118,22 @@ import {data} from "autoprefixer";
                                 {helyszinek.map((helyszin) => {
                                     const nameLength = String(helyszin.helyszinNev).length;
 
-                                    console.log(clickedID);
-                                    console.log(clicked);
 
-                                    return (
-                                        <div
-                                            key={helyszin.helyszinID}
-                                            className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/20 duration-300"
-                                            onClick={() =>
-                                                (!clicked
-                                                        ? setClicked(true)
-                                                        : setClicked(false)
-                                                ) &&
-                                                setClickedID(helyszin.helyszinID.valueOf)
-                                            }
-                                        >
-                                            <div className="row-span-3">
-                                                <img
-                                                    src={""}
-                                                    alt={""}
-                                                    className="h-[100px] w-[100px] desktop:w-[200px] desktop:h-[200px] rounded-xl"
-                                                />
-                                            </div>
+                                return (
+                                    <div
+                                        key={helyszin.helyszinID}
+                                        className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-400/20 duration-300"
+                                        onClick={() =>
+                                            handleMoreInfo(clicked,setClicked,setClickedID,helyszin.helyszinID)
+
+                                        }
+                                    >
+                                        <div className="row-span-3">
+                                            <img
+
+                                                className="h-[100px] w-[100px] desktop:w-[200px] desktop:h-[200px] rounded-xl"
+                                            />
+                                        </div>
 
                                             <div className="col-span-2">
                                                 <p
@@ -166,8 +160,8 @@ import {data} from "autoprefixer";
                                                     {helyszin.helyszinHsz}
                                                 </p>
                                             </div>
-                                            {clicked && clickedID && (
-                                                <div className="row-span-2 col-span-3">
+                                            {clicked && (clickedID === helyszin.helyszinID) && (
+                                                <div className="row-span-2 col-span-3 bg-gradient-to-t from-sky-300/40 via-sky-300/70 to-sky-400/70 rounded-xl text-center">
                                                     <p className="text-lg desktop:text-xl text-sky-800">
                                                         Helyszín kapacitás:{' '}
                                                         {helyszin.kapacitas}
@@ -211,6 +205,9 @@ import {data} from "autoprefixer";
                                                     </p>
                                                     <p className="text-lg desktop:text-xl text-sky-800">
                                                         Megjegyzés: {helyszin.megjegyzes}
+                                                </p>
+                                                <p className="text-lg desktop:text-xl text-sky-800">
+                                                    email: {helyszin.helyszinEmail}
                                                     </p>
                                                 </div>
                                             )}
@@ -241,6 +238,5 @@ import {data} from "autoprefixer";
             </>
         );
     };
-
 
 export default ProfilPage;
