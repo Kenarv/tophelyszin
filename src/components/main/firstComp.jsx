@@ -7,7 +7,6 @@ import FullList from '../Pages/fullList';
 import UploadForm from '../forms/uploadForm';
 import PwChangeFrom from '../forms/pwChangeForm';
 import ResultList from '../Pages/resultList';
-import FooterComp from '../footer/footerComp';
 
 const FirstComp = ({
     loggedUserNameObj,
@@ -21,6 +20,7 @@ const FirstComp = ({
     searchShowButtonObj,
     uploadShowButtonObj,
     pwChangeShowObj,
+    resetObj,
 }) => {
     const { logged } = loggedButtonObj;
     const { showSearch } = searchShowButtonObj;
@@ -34,9 +34,10 @@ const FirstComp = ({
                     <LoginForm
                         showLogin={showLogin}
                         loggedButtonObj={loggedButtonObj}
+                        resetObj={resetObj}
                     />
                 ) : showReg ? (
-                    <RegForm showReg={showReg} />
+                    <RegForm showReg={showReg} resetObj={resetObj} />
                 ) : showResult ? (
                     <ResultList
                         resultShowButtonObj={resultShowButtonObj}

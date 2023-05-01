@@ -116,6 +116,7 @@ function App() {
                     resultShowButtonObj={resultShowButtonObj}
                     filterObj={filterObj}
                     loggedUserNameObj={loggedUserNameObj}
+                    resetObj={resetObj}
                 />
                  
             </MainComp>

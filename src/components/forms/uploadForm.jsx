@@ -22,6 +22,8 @@ const UploadForm = props => {
     const [image, setImage] = useState(null);
 
 
+    const {showUpload, setShowUpload}=props.uploadShowButtonObj;
+
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         const reader = new FileReader();
@@ -384,7 +386,8 @@ const UploadForm = props => {
                     <div className="grid grid-cols-1">
                         <button type="submit"
                             className="transition duration-300 ease-in-out text-xl w-35 px-5 py-1 text-white rounded-3xl bg-sky-400/30 hover:bg-sky-300/50 shadow-lg py-3"
-                            //onClick={() => ''} //Ez indítja el a kilistázó lekérdezést
+                            onClick={() => {setShowUpload(false)}}
+                            
                         >
                             <p className="text-slate-700 font-semibold text-base">
                                 Feltöltés

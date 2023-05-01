@@ -18,9 +18,7 @@ const HeaderComp = props => {
     } = props.resetObj;
 
 
-    function spiner(){
-        "animate-spin"
-    }
+
 
     function handleReset(){
         setShowLogin(false);
@@ -31,7 +29,7 @@ const HeaderComp = props => {
         setShowFullList(false);
         setShowPwChange(false);
         setShowResult(false);
-        spiner();
+     
         
     }
 
@@ -69,7 +67,7 @@ const HeaderComp = props => {
                     </div>
                 )}
 
-                <button
+                {/* <button
                     className={`transition duration-300 ease-in-out text-xl w-2 px-3 py-1 ml-15 text-white rounded-3xl ${
                         !logged
                             ? 'bg-sky-300/30 hover:bg-sky-400/50'
@@ -80,7 +78,7 @@ const HeaderComp = props => {
                     }}
                 >
                     <p className="text-slate-700 text-sm">L</p>
-                </button>
+                </button> */}
             </div>
         </div>
     );

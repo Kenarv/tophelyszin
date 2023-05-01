@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function RegForm() {
+function RegForm(props) {
     const [lastName, setLastName] = useState('');
     const [firstName, setFirstName] = useState('');
     const [username, setUsername] = useState('');
@@ -41,6 +41,40 @@ function RegForm() {
                 setErrorMessage('Hiba történt a regisztráció során. Kérjük, próbálja meg később.');
             });
     };
+
+    const {
+        setShowLogin,
+        setShowReg,
+        setShowSearch,
+        setShowUpload,
+        setShowProfil,
+        setShowFullList,
+        setShowPwChange,
+        setShowResult,
+    } = props.resetObj;
+
+
+
+
+    function handleReset(){
+        setShowLogin(false);
+        setShowReg(false);
+        setShowSearch(false);
+        setShowUpload(false);
+        setShowProfil(false);
+        setShowFullList(false);
+        setShowPwChange(false);
+        setShowResult(false);
+     
+        
+    }
+
+
+
+
+
+
+
     return (
         <div className="animate-form-animation flex flex-col gap-2 w-[390px] md:w-[800px] mx-auto form-animation p-20 bg-gradient-to-r from-sky-300/50 via-sky-600/50 to-sky-500/50 rounded-xl shadow-2xl">
             <form action="" onSubmit={handleSubmit}>
@@ -137,7 +171,7 @@ function RegForm() {
                 <div className="flex flex-row my-10">
                     <button type="submit"
                         className="transition duration-300 ease-in-out text-xl w-35 px-5 py-1 text-white rounded-3xl bg-sky-400/30 hover:bg-sky-300/50 shadow-lg"
-                        onClick={() => ''} //innen megy majd a feltöltés az adatbázisba a bejelntkezési adatokkal valamint a továbblépés a profil oldalra a már meglévő adatokkal
+                        onClick={() => {handleReset()}} //innen megy majd a feltöltés az adatbázisba a bejelntkezési adatokkal valamint a továbblépés a profil oldalra a már meglévő adatokkal
                     >
                         <p className="text-slate-700 font-semibold text-base">
                             Regisztráció
