@@ -17,6 +17,8 @@
 
         if ($new_password !== $new_confirmPassword) {
             $response['error'] = "A jelszavak nem egyeznek meg!";
+            echo json_encode($response);
+            exit();
         } else {
             $hashed_new_password = password_hash($new_password, PASSWORD_DEFAULT);
         }

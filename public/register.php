@@ -3,10 +3,9 @@
     session_start();
 
     $data = json_decode(file_get_contents('php://input'), true);
+    $response = array();
 
-
-
-    // Ellenőrizze a HTTP kérést
+    // Ellenőrzi a HTTP kérést
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Adatok begyűjtése a formról
@@ -19,12 +18,10 @@
         $password = $data['password'];
         $confirmPassword = $data['confirmPassword'];
 
-
-
-
         // Jelszó egyezés ellenőrzése
         if ($password !== $confirmPassword) {
-            echo "A jelszavak nem egyeznek meg!";
+            $response['error'] = "A jelszavak nem egyeznek meg!";
+            echo json_encode($response);
             exit();
         }
 
@@ -35,12 +32,14 @@
 
         if ($row) {
             if ($row['username'] === $username) {
-                echo "A felhasználónév már foglalt!";
+                $response['error'] = "A felhasználónév már foglalt!";
+                echo json_encode($response);
                 exit();
             }
 
             if ($row['email'] === $email) {
-                echo "Ezzel az email címmel már regisztráltak!";
+                $response['error'] = "Ezzel az email címmel már regisztráltak!";
+                echo json_encode($response);
                 exit();
             }
         }
@@ -49,16 +48,17 @@
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Adatok mentése az adatbázisba
-        $sql = "INSERT INTO felhasznalo (vezNev, kerNev, username, email, phone, password) VALUES ('$lastName', '$firstName', '$username', '$email', '$phone', '$hashed_password')";
+        $sql = "INSERT INTO felhasznalo (vezNev, kerNev, username, email, phone, password) VALUES
+        ('$lastName', '$firstName', '$username', '$email', '$phone', '$hashed_password')";
+
         if (mysqli_query($conn, $sql)) {
-
-            echo "Az adatokat sikeresen tároltuk";
+            $response['success'] = "Az adatokat sikeresen tároltuk";
         } else {
-            echo "Hiba történt a tárolás közben: " . mysqli_error($conn);
+            $response['error'] = "Hiba történt a tárolás közben: " . mysqli_error($conn);
         }
+
+        // Kapcsolat bezárása
+        mysqli_close($conn);
+        echo json_encode($response);
     }
-
-    // Kapcsolat bezárása
-    mysqli_close($conn);
-
 ?>

@@ -15,10 +15,3 @@
             $_SESSION['loggedIn'] = true;
 
         }
-
-        //redirect to login
-        //echo("Be kell jelentkezni!");
-        //header("Location: login.php");
-        //die;
-
-

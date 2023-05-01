@@ -24,19 +24,15 @@ function RegForm() {
                 confirmPassword
             })
         })
-            .then(response => response.text())
+            .then(response => response.json())
             .then(data => {
-                if (data === "Az adatokat sikeresen tároltuk") {
-                    alert('Sikeres regisztráció!');
+                if (data.error)
+                {
+                    alert(data.error);
                 }
-                if (data === "Ezzel az email címmel már regisztráltak!") {
-                    alert('Ezzel az email címmel már regisztráltak!');
-                }
-                if (data === "A jelszavak nem egyeznek meg!") {
-                    alert('A jelszavak nem egyeznek meg!');
-                }
-                if (data === "A felhasználónév már foglalt!") {
-                    alert('A felhasználónév már foglalt!');
+                else
+                {
+                    alert(data.success);
                 }
 
             })

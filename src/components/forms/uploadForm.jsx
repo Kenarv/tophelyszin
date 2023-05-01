@@ -19,7 +19,17 @@ const UploadForm = props => {
     const [szallas, setszallas] = useState('');
     const [arkategoria, setarkategoria] = useState('Szerény');
     const [megjegyzes, setmegjegyzes] = useState('');
+    const [image, setImage] = useState(null);
 
+
+    const handleFileChange = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            setImage(reader.result);
+        };
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -41,16 +51,19 @@ const UploadForm = props => {
                 parkolo,
                 szallas,
                 arkategoria,
-                megjegyzes
+                megjegyzes,
+                image
             })
         })
-            .then(response => response.text())
+            .then(response => response.json())
             .then(data => {
-                if (data.includes("Az adatokat sikeresen tároltuk")) {
-                    alert('Sikeres tárolás!');
+                if (data.error)
+                {
+                    alert(data.error);
                 }
-                if (data.includes("Hiba történt a tárolás közben: ")) {
-                    alert('Hiba');
+                else
+                {
+                    alert(data.success);
                 }
 
 
@@ -87,6 +100,7 @@ const UploadForm = props => {
                             <input
                                 className="w-12 h-8 ml-2 border-2 border-sky-200 rounded-lg py-1 focus:outline-none focus:border-sky-700"
                                 type="text"
+                                pattern="[0-9]{4}" title="Csak szám kerülhet ide."
                                 value={helyszinIrsz}
                                 onChange={event => sethelyszinIrsz(event.target.value)}
                                 required
@@ -98,6 +112,7 @@ const UploadForm = props => {
                             <input
                                 className="w-32 h-8 ml-2 border-2 border-sky-200 rounded-lg py-1 focus:outline-none focus:border-sky-700"
                                 type="text"
+                                pattern="[a-zA-Z]{2, }"
                                 value={helyszinVaros}
                                 onChange={event => sethelyszinVaros(event.target.value)}
                                 required
@@ -185,11 +200,12 @@ const UploadForm = props => {
                         </label>
                         <input
                             type="text"
+                            pattern="[0-9]{1, }" title="Csak szám kerülhet ide."
                             className=" h-8  border-2 border-sky-200 rounded-lg py-1 focus:outline-none focus:border-sky-700"
                             value={kapacitas}
                             onChange={event => setkapacitas(event.target.value)}
                             required
-                        />              
+                        />
                     </div>
                     <div className="grid grid-cols-1">
                         <p className="font-bold py-2">
@@ -273,11 +289,12 @@ const UploadForm = props => {
                         </label>
                         <input
                             type="text"
+                            pattern="[0-9]{2, }" title="Csak szám kerülhet ide."
                             className=" h-8  border-2 border-sky-200 rounded-lg py-1 focus:outline-none focus:border-sky-700"
                             value={tancter}
                             onChange={event => settancter(event.target.value)}
                             required
-                        />                      
+                        />
                     </div>
                     <div className="grid grid-cols-1">
                         <p className="font-bold py-2">
@@ -352,10 +369,10 @@ const UploadForm = props => {
                     </div>
 
                     <div className="grid grid-cols-1">
-                    <label className="font-bold py-2" htmlFor="Kep">
+                    <label className="font-bold py-2" htmlFor="image">
                             képfeltöltés:
                         </label>
-                    <input className="my-5" type="file" name="Kep" id="kep" accept="image/png, image/jpeg" />
+                    <input className="my-5" type="file" onChange={handleFileChange} name="image" id="image" accept="image/png, image/jpeg" />
 
                     </div>
 

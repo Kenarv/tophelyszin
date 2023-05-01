@@ -4,7 +4,7 @@
 
 
     $data = json_decode(file_get_contents('php://input'), true);
-
+    $response = array();
 
 
     // Ellenőrizze a HTTP kérést
@@ -29,24 +29,25 @@
         $arkategoria = $data['arkategoria'];
         $megjegyzes = $data['megjegyzes'];
         $userID = $_SESSION['userID'];
+        //$imageData = $data['image'];
+        //$image = base64_decode($imageData);
+        //$newFileName = uniqid('img_') . '.jpg';
+        //$uploadPath = $image_dir . $newFileName;
+        //file_put_contents($uploadPath, $image);
 
 
-
-
-
-
-
-        // Adatok mentése az databázisba
+        // Adatok mentése az adatbázisba
         $sql = "INSERT INTO helyszin (userID,helyszinNev,helyszinIrsz,helyszinVaros,helyszinUtca,helyszinHsz,helyszinEmail,helyszinVarMegye, kapacitas, etel, ital, klima, tancter, parkolo, szallas, arkategoria, megjegyzes) VALUES ('$userID', '$helyszinNev', '$helyszinIrsz', '$helyszinVaros', '$helyszinUtca', '$helyszinHsz', '$helyszinEmail', '$helyszinVarMegye', '$kapacitas', '$etel', '$ital', '$klima', '$tancter', '$parkolo', '$szallas', '$arkategoria', '$megjegyzes')";
         if (mysqli_query($conn, $sql)) {
 
-            echo ("Az adatokat sikeresen tároltuk");
+            $response['success'] = "Az adatokat sikeresen tároltuk";
         } else {
-            echo "Hiba történt a tárolás közben: ";
+            $response['error'] = "Hiba történt a tárolás közben: " . mysqli_error($conn);
         }
+
+
+        // Kapcsolat bezárása
+        mysqli_close($conn);
+        echo json_encode($response);
     }
-
-    // Kapcsolat bezárása
-    mysqli_close($conn);
-
 ?>

@@ -15,18 +15,17 @@ function LoginForm({loggedButtonObj}) { //itt hookoltam be a loggedButtonObj-et
             body: JSON.stringify(data),
             headers: { "Content-Type": "application/json" },
         })
-            .then((response) => response.text())
-            .then((data) => {
-                if (data === "Nincs ilyen felhasználó!") {
-                    alert("Nincs ilyen felhasználó!");
-                }
-                if (data === "Sikeres belépés!") {
-                    alert("Sikeres belépés!");
-                    setLogged(true);        //itt megadja neki hogy sikeres belépés esetén a logged legyen true
+            .then((response) => response.json())
+            .then(data => {
 
+                if (data.error)
+                {
+                    alert(data.error);
                 }
-                if (data === "Hibás jelszó!") {
-                    alert("Hibás jelszó!");
+                else
+                {
+                    alert(data.success);
+                    setLogged(true);        //itt megadja neki hogy sikeres belépés esetén a logged legyen true
                 }
 
             })

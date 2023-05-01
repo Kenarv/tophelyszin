@@ -4,6 +4,7 @@
     session_start();
 
     $data = json_decode(file_get_contents('php://input'), true);
+    $response = array();
 
     // Ellenőrzi a HTTP kérést
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,7 +19,8 @@
         $row = mysqli_fetch_assoc($result);
 
         if (!$row) {
-            echo "Nincs ilyen felhasználó!";
+            $response['error'] = "Nincs ilyen felhasználó!";
+            echo json_encode($response);
             exit();
         }
 
@@ -30,19 +32,17 @@
             $_SESSION['username'] = $row['username'];
             $_SESSION['loggedUser'] = $row;
 
-
-            //$_SESSION['firstName'] = $row['kerNev'];
-            //$_SESSION['lastName'] = $row['vezNev'];
-
             // Visszatér egy sikeres üzenettel
-            echo "Sikeres belépés!";
+            $response['success'] = "Sikeres belépés!";
         } else {
             // A jelszó nem egyezik, hibaüzenetet ad vissza
-            echo "Hibás jelszó!";
+            $response['error'] = "Hibás jelszó!";
         }
+
+        // Kapcsolat bezárása
+        mysqli_close($conn);
+
+        // A válasz JSON formátumba konvertálása és visszaküldése
+        echo json_encode($response);
     }
-
-    // Kapcsolat bezárása
-    mysqli_close($conn);
-
 ?>
