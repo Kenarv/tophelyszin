@@ -6,12 +6,10 @@
     $data = json_decode(file_get_contents('php://input'), true);
     $response = array();
 
-
-    // Ellenőrizze a HTTP kérést
+    // Ellenőrzi a HTTP kérést
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Adatok begyűjtése a formról
-
         $helyszinNev = $data['helyszinNev'];
         $helyszinIrsz = $data['helyszinIrsz'];
         $helyszinVaros = $data['helyszinVaros'];
@@ -39,12 +37,10 @@
         // Adatok mentése az adatbázisba
         $sql = "INSERT INTO helyszin (userID,helyszinNev,helyszinIrsz,helyszinVaros,helyszinUtca,helyszinHsz,helyszinEmail,helyszinVarMegye, kapacitas, etel, ital, klima, tancter, parkolo, szallas, arkategoria, megjegyzes) VALUES ('$userID', '$helyszinNev', '$helyszinIrsz', '$helyszinVaros', '$helyszinUtca', '$helyszinHsz', '$helyszinEmail', '$helyszinVarMegye', '$kapacitas', '$etel', '$ital', '$klima', '$tancter', '$parkolo', '$szallas', '$arkategoria', '$megjegyzes')";
         if (mysqli_query($conn, $sql)) {
-
             $response['success'] = "Az adatokat sikeresen tároltuk";
         } else {
             $response['error'] = "Hiba történt a tárolás közben: " . mysqli_error($conn);
         }
-
 
         // Kapcsolat bezárása
         mysqli_close($conn);

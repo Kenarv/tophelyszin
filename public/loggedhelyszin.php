@@ -3,12 +3,9 @@
     include "dbconn.php";
     session_start();
 
-
     if (isset($_SESSION['userID'])) {
 
         $userID = $_SESSION['userID'];
-        //$username = $_SESSION['username'];
-        //$loggedUser = $_SESSION['loggedUser'];
 
         $query = "select * from helyszin where userID = '$userID'";
 
@@ -27,8 +24,4 @@
 
         // Adatbázis kapcsolat lezárása
         mysqli_close($conn);
-
-
-
-
     }

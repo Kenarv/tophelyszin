@@ -1,7 +1,6 @@
 <?php
     include "dbconn.php";
 
-
     // Azonosító megszerzése a GET paraméterből
     $id = $_GET['id'];
 
