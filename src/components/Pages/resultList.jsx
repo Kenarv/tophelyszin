@@ -22,21 +22,20 @@ const ResultList = ({ filterObj, resultShowButtonObj }) => {
                             const nameLength = String(element.name).length;
                             return (
                                 <div
-                                    key={element.id}
+                                    key={element.helyszinID}
                                     className="grid grid-flow-row auto-rows-auto grid-cols-1 desktop:grid-cols-3 gap-2 bg-sky-200/40 w-full p-5 rounded-xl border-2 border-sky-400/80 hover:bg-sky-500/20 duration-300"
                                     onClick={() =>
                                         handleMoreInfo(
                                             clicked,
                                             setClicked,
                                             setClickedID,
-                                            element.id,
+                                            element.helyszinID,
                                         )
                                     }
                                 >
                                     <div className="row-span-3">
                                         <img
-                                            src={element.kep}
-                                            alt={element.name}
+
                                             className="h-[100px] w-[100px] desktop:w-[200px] desktop:h-[200px] rounded-xl"
                                         />
                                     </div>
@@ -49,24 +48,24 @@ const ResultList = ({ filterObj, resultShowButtonObj }) => {
                                                     : 'text-2xl'
                                             } desktop:text-3xl text-sky-700`}
                                         >
-                                            {element.name}
+                                            {element.helyszinNev}
                                         </p>
                                     </div>
                                     <div className="row-span-2 col-span-2">
                                         <p className="text-xl desktop:text-2xl text-sky-700">
-                                            {element.megye}
+                                            {element.helyszinVarMegye}
                                         </p>
                                         <p className="text-lg desktop:text-xl text-sky-700">
-                                            {element.varos}
+                                            {element.helyszinVaros}
                                         </p>
                                         <p className="text-lg desktop:text-xl text-sky-700">
-                                            {element.utca}
+                                            {element.helyszinUtca}
                                         </p>
                                         <p className="text-lg desktop:text-xl text-sky-700">
-                                            {element.hazszam}
+                                            {element.helyszinHsz}
                                         </p>
                                     </div>
-                                    {clicked && clickedID === element.id && (
+                                    {clicked && clickedID === element.helyszinID && (
                                         <div className="row-span-2 col-span-3 bg-gradient-to-t from-sky-300/40 via-sky-300/70 to-sky-400/70 rounded-xl text-center">
                                             <p className="text-lg desktop:text-xl text-sky-800">
                                                 Helyszín kapacitás:{' '}
@@ -80,7 +79,7 @@ const ResultList = ({ filterObj, resultShowButtonObj }) => {
                                             </p>
                                             <p className="text-lg desktop:text-xl text-sky-800">
                                                 Bár:{' '}
-                                                {element.bar === 1
+                                                {element.ital === 1
                                                     ? 'igen'
                                                     : 'nem'}
                                             </p>
@@ -107,13 +106,13 @@ const ResultList = ({ filterObj, resultShowButtonObj }) => {
                                                     : 'nem'}
                                             </p>
                                             <p className="text-lg desktop:text-xl text-sky-800">
-                                                Árkategória: {element.arkat}
+                                                Árkategória: {element.arkategoria}
                                             </p>
                                             <p className="text-lg desktop:text-xl text-sky-800">
-                                                Megjegyzés: {element.megj}
+                                                Megjegyzés: {element.megjegyzes}
                                             </p>
                                             <p className="text-lg desktop:text-xl text-sky-800">
-                                                email: {element.email}
+                                                email: {element.helyszinEmail}
                                             </p>
                                         </div>
                                     )}

@@ -1,10 +1,10 @@
 import ResultShowButton from '../Pages/resultShowButton';
 import SearchShowButton from '../Pages/searchShowButton';
-import { venues } from '../../Lists/test_list';
-import {useEffect} from "react";
+//import { venues } from '../../Lists/test_list';
+import {useEffect, useState} from "react";
 
 const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
-
+    const [helyszinek, setHelyszinek] = useState([]);
     const {formData,setFormData,filteredData,setFilteredData} = filterObj;
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                 setHelyszinek(data);
 
             });
-    }, []); // [] üres tömb jelzi, hogy csak egyszer fusson le az useEffect hook
+    }, []);
 
     
 
@@ -33,17 +33,17 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
 
       function handleSubmit(event) {
         event.preventDefault();
-        const filtered = venues.filter((item) => {
+        const filtered = helyszinek.filter((item) => {
           return (
-            (formData.megye ? item.megye.includes(formData.megye) : true) &&
+            (formData.megye ? item.helyszinVarMegye.includes(formData.megye) : true) &&
             (formData.kapacitas ? formData.kapacitas.split('-')[0] < item.kapacitas < formData.kapacitas.split('-')[1] : true) &&
             (formData.etel ? item.etel.toString().includes(formData.etel) : true) &&
-            (formData.bar ? item.bar.toString().includes(formData.bar) : true) &&
+            (formData.bar ? item.ital.toString().includes(formData.bar) : true) &&
             (formData.klima ? item.klima.toString().includes( formData.klima) : true) &&
             (formData.tancter ? formData.tancter.split('-')[0] < item.tancter < formData.tancter.split('-')[1] : true) &&
             (formData.parkolo ? item.parkolo.toString().includes(formData.parkolo) : true) &&
             (formData.szallas ? item.szallas.toString().includes(formData.szallas) : true) &&
-            (formData.arkat ? item.arkat.includes(formData.arkat) : true)
+            (formData.arkat ? item.arkategoria.includes(formData.arkat) : true)
           );
         });
         

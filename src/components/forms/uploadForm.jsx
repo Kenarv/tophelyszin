@@ -160,38 +160,38 @@ const UploadForm = props => {
                             Válassza ki a megyét:
                         </label>
                         <select name="helyszinVarMegye"  required={true} value={helyszinVarMegye} onChange={event => sethelyszinVarMegye(event.target.value)} className="my-3">
-                            <option value="Bács-Kiskun">Bács-Kiskun</option>
-                            <option value="Baranya">Baranya</option>
-                            <option value="Békés">Békés</option>
-                            <option value="Borsod-Abaúj-Zemplén">
+                            <option value="Bács-Kiskun vármegye">Bács-Kiskun</option>
+                            <option value="Baranya vármegye">Baranya</option>
+                            <option value="Békés vármegye">Békés</option>
+                            <option value="Borsod-Abaúj-Zemplén vármegye">
                                 Borsod-Abaúj-Zemplén
                             </option>
-                            <option value="Csongrád-Csanád">
+                            <option value="Csongrád-Csanád vármegye">
                                 Csongrád-Csanád
                             </option>
-                            <option value="Fejér">Fejér</option>
-                            <option value="Győr-Moson-Sopron">
+                            <option value="Fejér vármegye">Fejér</option>
+                            <option value="Győr-Moson-Sopron vármegye">
                                 Győr-Moson-Sopron
                             </option>
-                            <option value="Hajdú-Bihar">Hajdú-Bihar</option>
-                            <option value="Heves">Heves</option>
-                            <option value="Jász-Nagykun-Szolnok">
+                            <option value="Hajdú-Bihar vármegye">Hajdú-Bihar</option>
+                            <option value="Heves vármegye">Heves</option>
+                            <option value="Jász-Nagykun-Szolnok vármegye">
                                 Jász-Nagykun-Szolnok
                             </option>
-                            <option value="Komárom-Esztergom">
+                            <option value="Komárom-Esztergom vármegye">
                                 Komárom-Esztergom
                             </option>
-                            <option value="Nógrád">Nógrád</option>
-                            <option value="Pest">Pest</option>
-                            <option value="Somogy">Somogy</option>
-                            <option value="Szabolcs-Szatmár-Bereg">
+                            <option value="Nógrád vármegye">Nógrád</option>
+                            <option value="Pest vármegye">Pest</option>
+                            <option value="Somogy vármegye">Somogy</option>
+                            <option value="Szabolcs-Szatmár-Bereg vármegye">
                                 Szabolcs-Szatmár-Bereg
                             </option>
-                            <option value="Tolna">Tolna</option>
-                            <option value="Vas">Vas</option>
-                            <option value="Veszprém">Veszprém</option>
-                            <option value="Zala">Zala</option>
-                            <option value="Budapest">Budapest</option>
+                            <option value="Tolna vármegye">Tolna</option>
+                            <option value="Vas vármegye">Vas</option>
+                            <option value="Veszprém vármegye">Veszprém</option>
+                            <option value="Zala vármegye">Zala</option>
+                            <option value="Budapest vármegye">Budapest</option>
                         </select>
                     </div>
                     <div className="grid grid-cols-1">
