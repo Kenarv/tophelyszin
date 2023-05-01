@@ -97,7 +97,10 @@ import {useState, useEffect} from 'react';
 
 
 
-
+        function fullExit(){
+            handleReset();
+            setLogged(false);
+        }
 
 
 
@@ -116,7 +119,7 @@ import {useState, useEffect} from 'react';
                                     <button
                                         className="transition duration-300 ease-in-out bg-red-500/70 text-xl h-10 desktop:h-5 w-17 px-3  hover:bg-red-200/70 text-white rounded-3xl shadow-lg"
                                         onClick={() => {
-                                            setLogged(false);
+                                            fullExit();
                                         }}
                                     >
                                         <p className="text-slate-700 font-semibold text-sm">
