@@ -33,6 +33,7 @@ function RegForm(props) {
                 else
                 {
                     alert(data.success);
+                    handleReset();
                 }
 
             })
@@ -171,7 +172,7 @@ function RegForm(props) {
                 <div className="flex flex-row my-10">
                     <button type="submit"
                         className="transition duration-300 ease-in-out text-xl w-35 px-5 py-1 text-white rounded-3xl bg-sky-400/30 hover:bg-sky-300/50 shadow-lg"
-                        onClick={() => {handleReset()}} //innen megy majd a feltöltés az adatbázisba a bejelntkezési adatokkal valamint a továbblépés a profil oldalra a már meglévő adatokkal
+                        onClick={() => ''} //innen megy majd a feltöltés az adatbázisba a bejelntkezési adatokkal valamint a továbblépés a profil oldalra a már meglévő adatokkal
                     >
                         <p className="text-slate-700 font-semibold text-base">
                             Regisztráció

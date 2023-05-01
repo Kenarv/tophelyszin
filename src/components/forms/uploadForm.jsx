@@ -22,7 +22,7 @@ const UploadForm = props => {
     const [image, setImage] = useState(null);
 
 
-    const {showUpload, setShowUpload}=props.uploadShowButtonObj;
+    const { setShowUpload }=props.uploadShowButtonObj;
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -66,6 +66,7 @@ const UploadForm = props => {
                 else
                 {
                     alert(data.success);
+                    setShowUpload(false);
                 }
 
 
@@ -386,7 +387,7 @@ const UploadForm = props => {
                     <div className="grid grid-cols-1">
                         <button type="submit"
                             className="transition duration-300 ease-in-out text-xl w-35 px-5 py-1 text-white rounded-3xl bg-sky-400/30 hover:bg-sky-300/50 shadow-lg py-3"
-                            onClick={() => {setShowUpload(false)}}
+                            onClick={() => ''}
                             
                         >
                             <p className="text-slate-700 font-semibold text-base">

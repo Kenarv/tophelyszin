@@ -9,6 +9,7 @@ import {useState, useEffect} from 'react';
                             pwChangeShowObj,
                             loggedButtonObj,
                             loggedUserNameObj,
+                            resetObj,
                         }) => {
 
 
@@ -20,9 +21,19 @@ import {useState, useEffect} from 'react';
         const [loading, setLoading] = useState(true);
 
 
-        const {setShowPwChange} = pwChangeShowObj;
+        const { setShowPwChange } = pwChangeShowObj;
         const {setLogged} = loggedButtonObj;
         const {LoggedUserName, setLoggedUserName} = loggedUserNameObj;
+
+        const {
+            setShowLogin,
+            setShowReg,
+            setShowSearch,
+            setShowUpload,
+            setShowProfil,
+            setShowFullList,
+            setShowResult,
+        } = resetObj;
 
         useEffect(() => {
             // Az adatok betöltése az adatbázisból
@@ -66,10 +77,32 @@ import {useState, useEffect} from 'react';
             return <p>Betöltés...</p>;
         }
 
-    function handleMoreInfo(state,setter,idSetter,toSet) {
-        !state ? setter(true) : setter(false);
-        idSetter(toSet);
-    }    return (
+        function handleMoreInfo(state,setter,idSetter,toSet) {
+            !state ? setter(true) : setter(false);
+            idSetter(toSet);
+        } 
+    
+        
+    
+        function handleReset() {
+            setShowLogin(false);
+            setShowReg(false);
+            setShowSearch(false);
+            setShowUpload(false);
+            setShowProfil(false);
+            setShowFullList(false);
+            setShowPwChange(false);
+            setShowResult(false);
+        }
+
+
+
+
+
+
+
+
+    return (
             <>
                 <div
                     className="animate-form-animation flex flex-col gap-2 w-[360px] laptop:w-[680px] desktop:w-[1200px] mx-auto form-animation p-2 bg-gradient-to-r from-sky-300/50 via-sky-600/50 to-sky-500/50 rounded-xl shadow-lg">

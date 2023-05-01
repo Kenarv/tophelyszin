@@ -65,6 +65,7 @@ const FirstComp = ({
                     pwChangeShowObj={pwChangeShowObj}
                     loggedButtonObj={loggedButtonObj}
                     loggedUserNameObj={loggedUserNameObj}
+                    resetObj={resetObj}
                 />
             ) : showFullList ? (
                 <FullList />
