@@ -1,5 +1,5 @@
-CREATE DATABASE tophelyszin2 default character set utf8;
-USE tophelyszin2;
+CREATE DATABASE tophelyszin default character set utf8;
+USE tophelyszin;
 
 CREATE TABLE IF NOT EXISTS `felhasznalo` (
   `userID` int(11) AUTO_INCREMENT,
