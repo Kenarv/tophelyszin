@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import ImagesList from '../../Lists/imagesList';
 
 const FullList = () => {
     const [helyszinek, setHelyszinek] = useState([]);
@@ -45,7 +46,8 @@ const FullList = () => {
                                 >
                                     <div className="row-span-3">
                                         <img
-
+                                            alt=''
+                                            src={ImagesList.wip}
                                             className="h-[100px] w-[100px] desktop:w-[200px] desktop:h-[200px] rounded-xl"
                                         />
                                     </div>

@@ -1,6 +1,7 @@
-import { venues } from '../../Lists/test_list';
+
 import ResultShowButton from './resultShowButton';
 import { useState } from 'react';
+import ImagesList from '../../Lists/imagesList';
 
 const ResultList = ({ filterObj, resultShowButtonObj }) => {
     const { filteredData } = filterObj;
@@ -35,7 +36,8 @@ const ResultList = ({ filterObj, resultShowButtonObj }) => {
                                 >
                                     <div className="row-span-3">
                                         <img
-
+                                            alt=''
+                                            src={ImagesList.wip}
                                             className="h-[100px] w-[100px] desktop:w-[200px] desktop:h-[200px] rounded-xl"
                                         />
                                     </div>

@@ -1,7 +1,7 @@
 import UploadShowButton from './uploadShowbutton';
 import {AiOutlineMail, AiOutlinePhone} from 'react-icons/ai';
 import {useState, useEffect} from 'react';
-
+import ImagesList from '../../Lists/imagesList';
 //function Logged() {
 
     const ProfilPage = ({
@@ -166,7 +166,8 @@ import {useState, useEffect} from 'react';
                                     >
                                         <div className="row-span-3">
                                             <img
-
+                                                alt=''
+                                                src={ImagesList.wip}
                                                 className="h-[100px] w-[100px] desktop:w-[200px] desktop:h-[200px] rounded-xl"
                                             />
                                         </div>

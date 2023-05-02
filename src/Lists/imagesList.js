@@ -34,7 +34,7 @@ import thirtythird from '../media/test_img/33.png';
 import thirtyfourth from '../media/test_img/34.png';
 import thirtyfifth from '../media/test_img/35.png';
 import thirtysixth from '../media/test_img/36.png';
-
+import wip from '../media/wip_th.png';
 const ImagesList = {
     first,
     second,
@@ -72,6 +72,7 @@ const ImagesList = {
     thirtyfourth,
     thirtyfifth,
     thirtysixth,
+    wip,
 };
 
 export default ImagesList;
