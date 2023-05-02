@@ -371,13 +371,13 @@ const UploadForm = props => {
                         <textarea name="megjegyzes" rows="5" cols="50" value={megjegyzes} onChange={event => setmegjegyzes(event.target.value)} className="w-full border-2 border-sky-200 rounded-lg py-1 focus:outline-none focus:border-sky-700" />
                     </div>
 
-                    <div className="grid grid-cols-1">
+                    {/* <div className="grid grid-cols-1">
                     <label className="font-bold py-2" htmlFor="image">
                             képfeltöltés:
                         </label>
                     <input className="my-5" type="file" onChange={handleFileChange} name="image" id="image" accept="image/png, image/jpeg" />
 
-                    </div>
+                    </div> */}
 
 
 
