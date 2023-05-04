@@ -100,7 +100,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                             <option value="Vas vármegye">Vas vármegye</option>
                             <option value="Veszprém vármegye">Veszprém vármegye</option>
                             <option value="Zala vármegye">Zala vármegye</option>
-                            <option value="Budapest vármegye">Budapest vármegye</option>
+                            <option value="Budapest vármegye">Budapest</option>
                         </select>
                     </div>
                     <div className="flex flex-col">
@@ -146,7 +146,7 @@ const SearchForm = ({searchShowButtonObj,resultShowButtonObj,filterObj,}) => {
                     </div>
                     <div className="flex flex-col">
                         <p className="font-bold py-2">
-                            A helyszín szolgáltassa az bárt ?
+                            A helyszín szolgáltassa a bárt ?
                         </p>
                         <div className="row space-x-2 p-3">
                             <input

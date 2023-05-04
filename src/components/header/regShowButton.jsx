@@ -18,7 +18,7 @@ const RegShowButton = props => {
             onClick={() => {!showReg ? handleClick(false, true) : handleClick(false, false)}}
             
         >
-            <p className="text-slate-700 font-semibold text-lg">Regisztáció</p>
+            <p className="text-slate-700 font-semibold text-lg">Regisztráció</p>
         </button>
     );
 };
